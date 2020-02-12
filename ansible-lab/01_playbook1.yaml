@@ -9,7 +9,7 @@
       server: 10.1.10.245
       user: azureuser
       validate_certs: no
-      server_port: 4443
+      server_port: 8443
 
   tasks:
     - name: Create a pool
