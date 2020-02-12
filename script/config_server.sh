@@ -27,3 +27,4 @@ echo -e "Default \e[96mContainers created\e[0m"
 cd /home/f5student/
 git clone https://github.com/wurstmeister/kafka-docker
 git clone https://github.com/cavalen/aolab-azure/
+chown -R f5student:f5student /home/f5student/*
