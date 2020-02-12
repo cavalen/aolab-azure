@@ -8,7 +8,7 @@ echo -e "Default \e[34mDocker installed\e[0m"
 
 # Create lab containers
 sudo docker run --name hackazon --restart unless-stopped -d -p 8080:80 -p 8443:443 ianwijaya/hackazon
-sudo docker run --name nginx --restart=unless-stopped -d -p 8081:80 nginx:latest
+sudo docker run --name nginx01 --restart=unless-stopped -d -p 8081:80 nginx:latest
 sudo docker run --name dvwa --restart unless-stopped -d -p 8082:80 vulnerables/web-dvwa
 sudo docker run --name f5helloworld --restart unless-stopped -d -p 8083:8080 f5devcentral/f5-hello-world 
 sudo docker run --name juice-shop --restart=unless-stopped -d -p 8084:3000 bkimminich/juice-shop
