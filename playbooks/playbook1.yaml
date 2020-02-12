@@ -1,0 +1,53 @@
+---
+
+- name: Create a VIP, pool and pool members
+  hosts: all
+  connection: local
+
+  vars:
+    provider:
+      password: admin
+      server: 10.1.1.245
+      user: admin
+      validate_certs: no
+      server_port: 443
+
+  tasks:
+    - name: Create a pool
+      bigip_pool:
+        provider: "{{ provider }}"
+        lb_method: round-robin
+        monitors: "/Common/http"
+        name: pool_web_ansible
+        slow_ramp_time: 120
+      delegate_to: localhost
+
+    - name: Add members to pool
+      bigip_pool_member:
+        provider: "{{ provider }}"
+        description: "webserver {{ item.name }}"
+        host: "{{ item.host }}"
+        name: "{{ item.name }}"
+        pool: pool_web_ansible
+        port: 80
+      with_items:
+        - host: 10.1.20.11
+          name: web01
+        - host: 10.1.20.12
+          name: web02
+      delegate_to: localhost
+
+    - name: Create a VIP
+      bigip_virtual_server:
+        provider: "{{ provider }}"
+        description: foo-vip
+        destination: 10.1.10.222
+        name: vip_web_ansible
+        pool: pool_web_ansible
+        port: 443
+        snat: Automap
+        profiles:
+          - http
+          - clientssl
+      delegate_to: localhost
+

@@ -1,0 +1,22 @@
+---
+
+- name: Deploy an App using AS3
+  hosts: all
+  connection: local
+
+  vars:
+    provider:
+      password: admin
+      server: 10.1.1.245
+      user: admin
+      validate_certs: no
+      server_port: 443
+      timeout: 60
+
+  tasks:
+    - name: Deploy an AS3 configuration
+      bigip_appsvcs_extension:
+        content: "{{ lookup('file', '{{ playbook_dir }}/ansible-as3.json') }}"
+        state: present
+        provider: "{{ provider }}" 
+      delegate_to: localhost
