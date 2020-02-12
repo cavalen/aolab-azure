@@ -1,0 +1,34 @@
+---
+
+- name: Remove VIP, pool, pool members and nodes
+  hosts: localhost
+
+  vars:
+    provider:
+      password: f5DEMOs4uLATAM
+      server: 10.1.10.245
+      user: azureuser
+      validate_certs: no
+      server_port: 4443
+
+  tasks:
+    - name: Destroy a VIP
+      bigip_virtual_server:
+        provider: "{{ provider }}"
+        name: vip_web_ansible
+        state: absent
+
+    - name: Destroy a pool
+      bigip_pool:
+        provider: "{{ provider }}"
+        name: pool_web_ansible
+        state: absent
+
+    - name: Delete nodes
+      bigip_node:
+        provider: "{{ provider }}"
+        name: "{{ item }}"
+        state: absent
+      loop:
+        - web01
+        - web02
