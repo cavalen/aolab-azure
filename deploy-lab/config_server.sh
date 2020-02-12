@@ -6,7 +6,7 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install -y software-properties-common ansible docker docker-compose python3-pip
 pip3 install boto boto3 netaddr passlib f5-sdk bigsuds deepdiff 'ansible[azure]' 
 #curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-echo -e "Default \e[34mDocker installed\e[0m"
+echo -e "Docker & Ansible Installed"
 
 # Create lab containers
 sudo docker run --name hackazon --restart unless-stopped -d -p 8080:80 -p 8443:443 ianwijaya/hackazon
@@ -21,7 +21,7 @@ sudo docker run --name juice-shop --restart=unless-stopped -d -p 8084:3000 bkimm
 #sudo docker run -dit -h app2 --name=app2 --net=internal --restart unless-stopped registry.gitlab.com/mattdierick/arcadia-finance/app2:latest
 #sudo docker run -dit -h app3 --name=app3 --net=internal --restart unless-stopped registry.gitlab.com/mattdierick/arcadia-finance/app3:latest
 #sudo docker run -dit -h nginx --name=nginx --net=internal --restart unless-stopped -p 80:80 -v /home/ubuntu/arcadia/default.conf:/etc/nginx/conf.d/default.conf registry.gitlab.com/mattdierick/arcadia-finance/nginx_oss:latest
-echo -e "Default \e[96mContainers created\e[0m"
+echo -e "Containers Created"
 
 # Clone Lab Repos
 cd /home/f5student/
@@ -29,3 +29,4 @@ git clone https://github.com/wurstmeister/kafka-docker
 git clone https://github.com/cavalen/aolab-azure/
 mv /home/f5student/aolab-azure/playbooks /home/f5student/
 chown -R f5student:f5student /home/f5student/*
+echo -e "Files Created"
