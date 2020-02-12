@@ -1,0 +1,24 @@
+# This file removes the entire resourge group by the end of the lab
+# validated  eduardoc/ansible-azure-labs:azure
+#
+- name: Create Ubuntu resources
+  hosts: localhost
+  vars_files:
+    - ./config.yml
+
+  tasks: 
+    - name: STARTING NOW ...
+      debug: msg="Starting now @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }}"
+    
+    - name: DELETE resource group "{{ RESOURCE_GROUP }}"
+      azure_rm_resourcegroup:
+        tenant: "{{ TENANT_ID }}"
+        client_id: "{{ CLIENT_ID}}"
+        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
+        subscription_id: "{{ SUBSCRIPTION_ID }}"
+        name: "{{ RESOURCE_GROUP }}"
+        state: absent
+        force_delete_nonempty: yes
+        location: "{{ DEFAULT_LOCATION }}"
+
+    - debug: msg="Finishing ... @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }}"
