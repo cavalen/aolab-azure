@@ -22,5 +22,6 @@ sudo docker run --name juice-shop --restart=unless-stopped -d -p 8084:3000 bkimm
 echo -e "Default \e[96mContainers created\e[0m"
 
 # Clone Lab Repos
+cd /home/f5student/
 git clone https://github.com/wurstmeister/kafka-docker
 git clone https://github.com/cavalen/as3gosmarter/
