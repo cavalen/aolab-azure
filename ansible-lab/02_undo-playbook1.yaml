@@ -31,4 +31,3 @@
         state: absent
       loop:
         - web01
-        - web02
