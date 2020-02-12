@@ -3,7 +3,7 @@
 # Install Docker & Ansible
 sudo apt update
 sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install -y software-properties-common ansible docker docker-compose pip3
+sudo apt install -y software-properties-common ansible docker docker-compose python3-pip
 pip3 install boto boto3 netaddr passlib f5-sdk bigsuds deepdiff 'ansible[azure]' 
 echo -e "Default \e[34mDocker installed\e[0m"
 
