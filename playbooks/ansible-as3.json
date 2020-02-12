@@ -1,0 +1,39 @@
+{
+    "class": "AS3",
+    "action": "deploy",
+    "persist": true,
+    "declaration": {
+       "class": "ADC",
+       "schemaVersion": "3.0.0",
+       "id": "lmnopq23456",
+       "label": "GoSmarter",
+       "remark": "Generic HTTP application using Ansible",
+       "ACME_cloud_ANSIBLE": {
+          "class": "Tenant",
+          "vs_Ansible_http_80": {
+             "class": "Application",
+             "template": "generic",
+             "vs_Ansible_http_80": {
+                "class": "Service_HTTP",
+                "virtualAddresses": [
+                   "10.1.10.116"
+                ],
+                "pool": "web_pool_ans",
+                "virtualPort": 80
+             },
+             "web_pool_ans": {
+                "class": "Pool",
+                "monitors": [
+                   "http"
+                ],
+                "members": [{
+                   "servicePort": 80,
+                   "serverAddresses": [
+                      "10.1.20.11"
+                   ]
+                }]
+             }
+          }
+       }
+    }
+}
