@@ -16,7 +16,7 @@
              "vs_Ansible_http_80": {
                 "class": "Service_HTTP",
                 "virtualAddresses": [
-                   "10.1.10.116"
+                   "10.1.10.223"
                 ],
                 "pool": "web_pool_ans",
                 "virtualPort": 80
