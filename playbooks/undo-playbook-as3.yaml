@@ -7,10 +7,10 @@
   vars:
     provider:
       password: admin
-      server: 10.1.1.245
+      server: 10.1.10.245
       user: admin
       validate_certs: no
-      server_port: 443
+      server_port: 4443
       timeout: 60
 
   tasks:

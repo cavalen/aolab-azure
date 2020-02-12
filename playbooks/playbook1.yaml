@@ -7,10 +7,10 @@
   vars:
     provider:
       password: admin
-      server: 10.1.1.245
+      server: 10.1.10.245
       user: admin
       validate_certs: no
-      server_port: 443
+      server_port: 4443
 
   tasks:
     - name: Create a pool
@@ -29,19 +29,17 @@
         host: "{{ item.host }}"
         name: "{{ item.name }}"
         pool: pool_web_ansible
-        port: 80
+        port: 8083
       with_items:
-        - host: 10.1.20.11
+        - host: 10.1.10.80
           name: web01
-        - host: 10.1.20.12
-          name: web02
       delegate_to: localhost
 
     - name: Create a VIP
       bigip_virtual_server:
         provider: "{{ provider }}"
         description: foo-vip
-        destination: 10.1.10.222
+        destination: 10.1.10.245
         name: vip_web_ansible
         pool: pool_web_ansible
         port: 443
