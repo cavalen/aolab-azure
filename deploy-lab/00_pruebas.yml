@@ -7,10 +7,10 @@
     - ./config.yml
 
   tasks:
-
+  
     - name: THIS CAN TAKE SOME TIME (10 MIN) ... HAVE A COFFEE AND RELAX!
       debug: msg="Starting now @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }}"
-
+      
     - name: Get your Public IP Address
       local_action:
         module: uri
@@ -27,5 +27,5 @@
 
     - name: Display Public Network for Security Group - ALLOWED_SRC_ADDRESS
       debug: var=ALLOWED_SRC_ADDRESS
-
+    
     - debug: msg="Finishing ... @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }}"
