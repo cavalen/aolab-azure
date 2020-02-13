@@ -1,0 +1,109 @@
+{
+	"id": "6526fe65-9463-4421-8b27-e3800245f22a",
+	"name": "A&O Latam - Azure",
+	"values": [
+		{
+			"key": "bigip1",
+			"value": "bigip-cav.centralus.cloudapp.azure.com",
+			"enabled": true
+		},
+		{
+			"key": "bigip_admin_user",
+			"value": "azureuser",
+			"enabled": true
+		},
+		{
+			"key": "bigip_admin_password",
+			"value": "f5DEMOs4uLATAM",
+			"enabled": true
+		},
+		{
+			"key": "bigip_root_password",
+			"value": "f5DEMOs4uLATAM",
+			"enabled": true
+		},
+		{
+			"key": "bigip_1_auth_token",
+			"value": "3CUDLLFTPDH7ML5JRXWOVEURGV",
+			"enabled": true
+		},
+		{
+			"key": "mgmt_port",
+			"value": "8443",
+			"enabled": true
+		},
+		{
+			"key": "bigip_dns_servers",
+			"value": "4.2.2.2,8.8.8.8",
+			"enabled": true
+		},
+		{
+			"key": "bigip_net_internal",
+			"value": "1.1,false,10",
+			"enabled": true
+		},
+		{
+			"key": "bigip_net_internal_ips",
+			"value": "10.1.10.10/24,10.1.10.11/24,10.1.10.13/24",
+			"enabled": true
+		},
+		{
+			"key": "bigip_net_defaultgw",
+			"value": "10.1.20.1",
+			"enabled": true
+		},
+		{
+			"key": "bigip_transaction_id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "as3_filename",
+			"value": "f5-appsvcs-3.17.1-1.noarch.rpm",
+			"enabled": true
+		},
+		{
+			"key": "as3_filelen",
+			"value": "15924343",
+			"enabled": true
+		},
+		{
+			"key": "do_filename",
+			"value": "f5-declarative-onboarding-1.10.0-2.noarch.rpm",
+			"enabled": true
+		},
+		{
+			"key": "do_filelen",
+			"value": "1601837",
+			"enabled": true
+		},
+		{
+			"key": "ts_filename",
+			"value": "f5-telemetry-1.9.0-1.noarch.rpm",
+			"enabled": true
+		},
+		{
+			"key": "ts_filelen",
+			"value": "9544237",
+			"enabled": true
+		},
+		{
+			"key": "_as3_install_uuid",
+			"value": "d0626d76-9d36-4515-a591-9a6ed4770844",
+			"enabled": true
+		},
+		{
+			"key": "_do_install_uuid",
+			"value": "d6210ab0-5605-4b98-af3e-955f88cceb0d",
+			"enabled": true
+		},
+		{
+			"key": "_ts_install_uuid",
+			"value": "df0a5e86-47c4-4ef5-97c8-165919b6c187",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-02-13T01:14:28.784Z",
+	"_postman_exported_using": "Postman/7.16.1"
+}
