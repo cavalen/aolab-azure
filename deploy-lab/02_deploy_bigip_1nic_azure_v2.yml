@@ -14,10 +14,6 @@
     - name: Deploy F5 BIG-IP on Azure - BYOL - Existing Stack
       azure_rm_deployment:
         state: present
-        tenant: "{{ TENANT_ID }}"
-        client_id: "{{ CLIENT_ID }}"
-        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-        subscription_id: "{{ SUBSCRIPTION_ID }}"
         resource_group_name: "{{ RESOURCE_GROUP }}"
         location: "{{ DEFAULT_LOCATION }}"
         template_link: "https://raw.githubusercontent.com/F5Networks/f5-azure-arm-templates/master/supported/standalone/1nic/existing-stack/payg/azuredeploy.json"
@@ -71,10 +67,6 @@
 
     - name: Modify BIG-IP Network Security Group with new rules ({{ BIGIP_NAME }}-{{ STUDENT_ID }}-mgmt-nsg)
       azure_rm_securitygroup:
-        tenant: "{{ TENANT_ID }}"
-        client_id: "{{ CLIENT_ID}}"
-        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-        subscription_id: "{{ SUBSCRIPTION_ID }}"
         resource_group: "{{ RESOURCE_GROUP }}"
         name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-mgmt-nsg"
         rules:

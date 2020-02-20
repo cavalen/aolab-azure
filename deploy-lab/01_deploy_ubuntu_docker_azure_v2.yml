@@ -1,8 +1,9 @@
 # This file establishes the necessary resources on Azure to create a Demo Webserver using Ubuntu
-#
-#
+# Authentication from file $HOME/.azure/credentials
+
 - name: Create Ubuntu Server + Docker + Apps
   hosts: localhost
+  connection: local
   vars:
     local_ip: "nada-none"
     date: "{{ lookup('pipe', 'date +%Y%m%d') }}"
@@ -33,29 +34,17 @@
       
     - name: Create Resource Group {{ RESOURCE_GROUP }}
       azure_rm_resourcegroup:
-        tenant: "{{ TENANT_ID }}"
-        client_id: "{{ CLIENT_ID}}"
-        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-        subscription_id: "{{ SUBSCRIPTION_ID }}"
         name: "{{ RESOURCE_GROUP }}"
         location: "{{ DEFAULT_LOCATION }}"
 
     - name: Create Virtual Network {{ VNET1 }}
       azure_rm_virtualnetwork:
-        tenant: "{{ TENANT_ID }}"
-        client_id: "{{ CLIENT_ID}}"
-        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-        subscription_id: "{{ SUBSCRIPTION_ID }}"
         resource_group: "{{ RESOURCE_GROUP }}"
         name: "{{ VNET1 }}"
         address_prefixes: "10.1.0.0/16"
 
     - name: Add Subnet {{ VNET_SUBNET1 }} to VNET {{ VNET1 }}
       azure_rm_subnet:
-        tenant: "{{ TENANT_ID }}"
-        client_id: "{{ CLIENT_ID}}"
-        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-        subscription_id: "{{ SUBSCRIPTION_ID }}"
         resource_group: "{{ RESOURCE_GROUP }}"
         name: "{{ VNET_SUBNET1 }}"
         address_prefix: "10.1.10.0/24"
@@ -63,10 +52,6 @@
 
     - name: Add Subnet CONTAINERS to VNET {{ VNET1 }}
       azure_rm_subnet:
-        tenant: "{{ TENANT_ID }}"
-        client_id: "{{ CLIENT_ID}}"
-        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-        subscription_id: "{{ SUBSCRIPTION_ID }}"
         resource_group: "{{ RESOURCE_GROUP }}"
         name: "{{ VNET_SUBNET2 }}"
         address_prefix: "10.1.20.0/24"
@@ -74,10 +59,6 @@
 
     - name: Create Storage Account sa{{ STUDENT_ID }}{{ date }} in Resource Group {{ RESOURCE_GROUP }}
       azure_rm_storageaccount:
-        tenant: "{{ TENANT_ID }}"
-        client_id: "{{ CLIENT_ID}}"
-        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-        subscription_id: "{{ SUBSCRIPTION_ID }}"
         location: "{{ DEFAULT_LOCATION }}"
         resource_group: "{{ RESOURCE_GROUP }}"
         name: "sa{{ STUDENT_ID }}{{ date }}"
@@ -85,10 +66,6 @@
 
     - name: Edit {{ NODE_NAME }}-{{ STUDENT_ID }}-sg0 Security Group in Resource Group {{ RESOURCE_GROUP }} (Allow DATA and Access)
       azure_rm_securitygroup:
-          tenant: "{{ TENANT_ID }}"
-          client_id: "{{ CLIENT_ID}}"
-          secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-          subscription_id: "{{ SUBSCRIPTION_ID }}"
           resource_group: "{{ RESOURCE_GROUP }}"
           name: "{{ NODE_NAME }}-{{ STUDENT_ID }}-sg0"
           purge_rules: yes
@@ -131,10 +108,6 @@
 
     - name: Create {{ NODE_NAME }}-{{ STUDENT_ID }}-int-nic0 internal NIC with Security Group {{ NODE_NAME }}-{{ STUDENT_ID }}-sg0
       azure_rm_networkinterface:
-        tenant: "{{ TENANT_ID }}"
-        client_id: "{{ CLIENT_ID}}"
-        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-        subscription_id: "{{ SUBSCRIPTION_ID }}"
         location: "{{ DEFAULT_LOCATION }}"
         resource_group: "{{ RESOURCE_GROUP }}"
         security_group: "{{ NODE_NAME }}-{{ STUDENT_ID }}-sg0"
@@ -149,10 +122,6 @@
 
     - name: Create {{ NODE_NAME }}-{{ STUDENT_ID }} Virtual Machine
       azure_rm_virtualmachine:
-        tenant: "{{ TENANT_ID }}"
-        client_id: "{{ CLIENT_ID}}"
-        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
-        subscription_id: "{{ SUBSCRIPTION_ID }}"
         location: "{{ DEFAULT_LOCATION }}"
         resource_group: "{{ RESOURCE_GROUP }}"
         name: "{{ NODE_NAME }}-{{ STUDENT_ID }}"

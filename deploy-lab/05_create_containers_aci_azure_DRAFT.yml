@@ -1,0 +1,27 @@
+# Deploy a public container in Azure Container Instance Service
+# Authentication from file $HOME/.azure/credentials
+
+- name: Deploy Service in Azure Container Instance
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - ./config.yml
+
+  tasks:
+    - name: Starting ....
+      debug: msg="Starting now @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }} "
+
+    # az container create -g AO-LAB-cav --name juiceshop --image bkimminich/juice-shop --ports 3000 --vnet aolab-vnet-cav --subnet aolab-subnet-container-cav --ip-address private 
+    #- name: Run az cli command to create Juiceshop (3000) container
+    #  command: "az container create -g {{ RESOURCE_GROUP }} --name juiceshop --image bkimminich/juice-shop --ports 3000 --memory 0.5 --vnet {{ VNET1 }} --subnet {{VNET_SUBNET2}} --ip-address private"
+
+    - name: Run az cli command to create Hackazon (80) container
+      shell: "az container create -g {{ RESOURCE_GROUP }} --name juiceshop --image bkimminich/juice-shop --ports 80 --memory 0.5 --vnet {{ VNET1 }} --subnet {{VNET_SUBNET2}} --ip-address private"
+
+    #- name: Run az cli command to create f5-hello-world (80) container
+    #  command: "az container create -g {{ RESOURCE_GROUP }} --name juiceshop --image bkimminich/juice-shop --ports 3000 --memory 0.5 --vnet {{ VNET1 }} --subnet {{VNET_SUBNET2}} --ip-address private"
+
+    #- name: Run az cli command to create Juiceshop (80) container
+    #  command: "az container create -g {{ RESOURCE_GROUP }} --name juiceshop --image bkimminich/juice-shop --ports 3000 --memory 0.5 --vnet {{ VNET1 }} --subnet {{VNET_SUBNET2}} --ip-address private"
+    

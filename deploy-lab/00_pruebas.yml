@@ -28,4 +28,11 @@
     - name: Display Public Network for Security Group - ALLOWED_SRC_ADDRESS
       debug: var=ALLOWED_SRC_ADDRESS
     
+    - name: Add Subnet CONTAINERS to VNET {{ VNET1 }}
+      azure_rm_subnet:
+        resource_group: "{{ RESOURCE_GROUP }}"
+        name: "borrame"
+        address_prefix: "10.1.30.0/24"
+        virtual_network: "{{ VNET1 }}"
+
     - debug: msg="Finishing ... @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }}"

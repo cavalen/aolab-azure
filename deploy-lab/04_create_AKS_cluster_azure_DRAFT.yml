@@ -1,0 +1,64 @@
+# Deploy a K8S Cluster in AKS 
+# https://docs.ansible.com/ansible/latest/modules/azure_rm_aks_module.html 
+
+- name: Deploy BIG-IP 1-NIC on Azure
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - ./config.yml
+
+  tasks:
+    - name: Starting ....
+      debug: msg="Starting now @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }} "
+    
+    - name: Create new local SSH KEY (SAME DIRECTORY AS THIS PLAYBOOK) (P1)
+      file:
+        path: "{{ playbook_dir }}/keys/"
+        state: directory
+        
+    - name: Create new local SSH KEY (SAME DIRECTORY AS THIS PLAYBOOK) (P2)
+      openssh_keypair:
+        path: "{{ playbook_dir }}/keys/aks_key_{{STUDENT_ID}}"
+        force: yes
+
+    - name: List supported kubernetes version from Azure
+      azure_rm_aksversion_info:
+        tenant: "{{ TENANT_ID }}"
+        client_id: "{{ CLIENT_ID}}"
+        secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
+        subscription_id: "{{ SUBSCRIPTION_ID }}"
+        location: "{{ DEFAULT_LOCATION }}"
+      register: versions
+  
+    - debug: var=versions
+  
+    - name: Create a Managed Azure Kubernetes Service (AKS) Cluster
+      azure_rm_aks:
+        state: present
+        tenant: "{{ TENANT_ID }}"
+        subscription_id: "{{ SUBSCRIPTION_ID }}"
+        resource_group_name: "{{ RESOURCE_GROUP }}"
+        location: "{{ DEFAULT_LOCATION }}"
+        name: "aks-{{ STUDENT_ID }}"
+        dns_prefix: "aks-{{ STUDENT_ID }}-dns"
+        kubernetes_version: "1.14.8"
+        service_principal: 
+          client_id: "{{ CLIENT_ID }}"
+          client_secret: "{{ SERVICE_PRINCIPAL_SECRET }}"
+        linux_profile:
+          admin_username: azureuser
+          ssh_key: "{{ playbook_dir }}/keys/aks_key_{{STUDENT_ID}}"
+        network_profile:
+          dns_service_ip: "10.1.100.10"
+          network_plugin: "kubenet"
+          pod_cidr: "10.1.101.0/24"
+          service_cidr: "10.1.100.0/24"
+          docker_bridge_cidr: "172.17.0.1/16"
+        agent_pool_profiles:
+          - name: default
+            count: 2
+            vm_size: Standard_B2ms
+        tags:
+          Environment: labs
+    
