@@ -1,10 +1,12 @@
 #
 # Variables for Azure template Deployment
 #
-SUBSCRIPTION_ID: 75f86c46-9cbc-4f6c-85ea-195e3d3c8ac0
-TENANT_ID: e569f29e-b098-4cea-b6f0-48fa8532d64a
-CLIENT_ID: 63a4e92b-3a24-4ce1-a983-cd31be858312
-SERVICE_PRINCIPAL_SECRET: 4GE/1ye0cSB@niPsy1+hmasAGwi/rebd
+#SUBSCRIPTION_ID: 75f86c46-9cbc-4f6c-85ea-195e3d3c8ac0
+#TENANT_ID: e569f29e-b098-4cea-b6f0-48fa8532d64a
+#CLIENT_ID: 63a4e92b-3a24-4ce1-a983-cd31be858312
+#SERVICE_PRINCIPAL_SECRET: 4GE/1ye0cSB@niPsy1+hmasAGwi/rebd
+
+
 
 # Student_ID lowercase and numbers only
 STUDENT_ID: cav
@@ -15,6 +17,7 @@ DEFAULT_LOCATION: "Central US"
 
 VNET1: aolab-vnet-{{ STUDENT_ID }}
 VNET_SUBNET1: aolab-subnet-{{ STUDENT_ID }}
+VNET_SUBNET2: aolab-subnet-container-{{ STUDENT_ID }}
 
 NODE_NAME: lamp-server
 BIGIP_NAME: bigip
