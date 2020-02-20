@@ -1,11 +1,18 @@
 #
 # Variables for Azure template Deployment
 #
-#SUBSCRIPTION_ID: 75f86c46-9cbc-4f6c-85ea-195e3d3c8ac0
-#TENANT_ID: e569f29e-b098-4cea-b6f0-48fa8532d64a
-#CLIENT_ID: 63a4e92b-3a24-4ce1-a983-cd31be858312
-#SERVICE_PRINCIPAL_SECRET: 4GE/1ye0cSB@niPsy1+hmasAGwi/rebd
+#SUBSCRIPTION_ID: xxxxxxxxx-xxxxxxxxx-xxxxxxxxxxxx
+#TENANT_ID: xxxxxxxxx-xxxxxxxxx-xxxxxxxxxxxx
+#CLIENT_ID: xxxxxxxxx-xxxxxxxxx-xxxxxxxxxxxx
+#SERVICE_PRINCIPAL_SECRET: xxxxxx/xxxxxxxxx/xxxxxx
 
+# Credentials not used in this file in v2. 
+# Create a file $HOME/.azure/credentials with the following syntax:
+# [default]
+# subscription_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+# client_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+# secret=xxxxxxxxxxxxxxxxx
+# tenant=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 
 # Student_ID lowercase and numbers only
