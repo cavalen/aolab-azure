@@ -1,7 +1,7 @@
 # For Ubuntu 18.04 LTS
 # Install Ansible & Dependencies
 sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install -y docker.io docker-compose ansible
+sudo apt install -y docker.io python3-pip docker-compose ansible
 pip3 install boto boto3 netaddr passlib f5-sdk bigsuds deepdiff 'ansible[azure]' 
 
 # Instalar Azure CLI 
