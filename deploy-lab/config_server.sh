@@ -1,10 +1,17 @@
 !/bin/bash
 
-# Install Docker, Ansible, Terraform
+# Install Docker, Ansible
 sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt update && sudo apt -y upgrade
 sudo apt install -y software-properties-common ansible docker.io docker-compose python3-pip
-echo -e "Docker Installed"
+echo -e "Docker, Ansible Installed"
+
+# Install Terraform
+TER_VER=`curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep tag_name | cut -d: -f2 | tr -d \"\,\v | awk '{$1=$1};1'`
+wget https://releases.hashicorp.com/terraform/${TER_VER}/terraform_${TER_VER}_linux_amd64.zip
+unzip terraform_${TER_VER}_linux_amd64.zip
+sudo mv terraform /usr/local/bin/
+echo -e "Terraform Installed"
 
 # Run containers
 sudo docker run --name hackazon --restart unless-stopped -d -p 8080:80 -p 8443:443 ianwijaya/hackazon
