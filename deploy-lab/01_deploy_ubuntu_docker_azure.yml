@@ -113,20 +113,34 @@
                 destination_port_range: 443
                 access: Allow
                 priority: 102
-                direction: Inbound                
+                direction: Inbound
+              - name: 'Allow_TCP_2181_kafka'
+                protocol: Tcp
+                source_address_prefix: '{{ ALLOWED_SRC_ADDRESS }}'
+                destination_port_range: 2181
+                access: Allow
+                priority: 103
+                direction: Inbound  
+              - name: 'Allow_TCP_9092_kafka'
+                protocol: Tcp
+                source_address_prefix: '{{ ALLOWED_SRC_ADDRESS }}'
+                destination_port_range: 9092
+                access: Allow
+                priority: 104
+                direction: Inbound                     
               - name: 'Allow_TCP_8080_to_8089'
                 protocol: Tcp
                 source_address_prefix: '{{ ALLOWED_SRC_ADDRESS }}'
                 destination_port_range: 8080-8089
                 access: Allow
-                priority: 103
+                priority: 105
                 direction: Inbound
               - name: 'Allow_TCP_8443'
                 protocol: Tcp
                 source_address_prefix: '{{ ALLOWED_SRC_ADDRESS }}'
                 destination_port_range: 8443
                 access: Allow
-                priority: 104
+                priority: 106
                 direction: Inbound
 
     - name: Create {{ NODE_NAME }}-{{ STUDENT_ID }}-int-nic0 internal NIC with Security Group {{ NODE_NAME }}-{{ STUDENT_ID }}-sg0
