@@ -25,9 +25,16 @@ sudo docker run --name nginx02 --restart=unless-stopped -d -p 8085:80 nginx:late
 #sudo docker run -dit -h nginx --name=nginx --net=internal --restart unless-stopped -p 80:80 -v /home/ubuntu/arcadia/default.conf:/etc/nginx/conf.d/default.conf registry.gitlab.com/mattdierick/arcadia-finance/nginx_oss:latest
 echo -e "Containers Created"
 
-# Clone Lab Repos
+# Kafka - for Telemetry Streaming
 cd /home/f5student/
 git clone https://github.com/wurstmeister/kafka-docker
+rm /home/f5student/kafka-docker/docker-compose.yml
+curl https://raw.githubusercontent.com/cavalen/aolab-azure/master/files/docker-compose.yml -o /home/f5student/kafka-docker/docker-compose.yml
+cd /home/f5student/kafka-docker/
+sudo docker-compose up -d
+
+# Clone Lab Repos
+cd /home/f5student/
 git clone https://github.com/cavalen/aolab-azure/
 mv /home/f5student/aolab-azure/playbooks /home/f5student/
 chown -R f5student:f5student /home/f5student/*
