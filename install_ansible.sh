@@ -7,6 +7,3 @@ pip3 install boto boto3 netaddr passlib f5-sdk fi-cli bigsuds deepdiff 'ansible[
 
 # Install Azure CLI 
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-# Clone Repo
-git clone https://github.com/cavalen/aolab-azure/
