@@ -13,7 +13,7 @@ This lab contains 3 parts:
 
 ### Part 1: 
 Install Ansible and additional requeriments in a Linux server (or Virtual Machine) to deploy infrastructure in Azure.
-You can use MacOS but you need to install Ansible and Python-pip using a package manger like `brew`
+You can use MacOS but you need to install Ansible and Python-pip using a package manger like `brew`.
 
 Check/run `install_ansible.sh` if using Linux:
 
@@ -45,7 +45,7 @@ Create/edit the file `$HOME/.azure/credentials` with the following syntax and us
 
 2b) Deploy Azure infrastructure using Ansible:
 
-Go to `./aolab-azure/deploy-lab`, edit the `config.yml` file and change the `STUDENT_ID` paramenter, using lowercase letters and numbers ONLY
+Go to `./aolab-azure/deploy-lab`, edit the `config.yml` file and change the `STUDENT_ID` paramenter, using lowercase letters and numbers ONLY.
 
 Go to `./aolab-azure/deploy-lab` and run the playbooks in order:
 ```
@@ -58,7 +58,7 @@ RTFM
 
 
 ## DELETING THE LAB
-At the end of the Lab do not forget to delete the resources created to avoid unwanted charges
+At the end of the Lab do not forget to delete the resources created to avoid unwanted charges.
 
 You can delete the Lab by running a provided Ansible Playbook
 Go to `./aolab-azure/deploy-lab` and run:
