@@ -8,6 +8,7 @@
 
 # Credentials not used in this file in v2. 
 # Create a file $HOME/.azure/credentials with the following syntax:
+#
 # [default]
 # subscription_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 # client_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
