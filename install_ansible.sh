@@ -5,7 +5,7 @@ sudo apt update && sudo apt -y upgrade
 sudo apt install -y docker.io python3-pip docker-compose ansible
 pip3 install boto boto3 netaddr passlib f5-sdk fi-cli bigsuds deepdiff 'ansible[azure]' 
 
-# Instalar Azure CLI 
+# Install Azure CLI 
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 # Clone Repo
