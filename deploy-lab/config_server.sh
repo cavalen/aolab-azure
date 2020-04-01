@@ -2,7 +2,7 @@
 
 # Install Docker, Ansible
 sudo apt-add-repository --yes ppa:ansible/ansible
-sudo apt update && sudo apt -y upgrade
+sudo apt update
 sudo apt install -y software-properties-common ansible docker.io docker-compose python3-pip
 echo -e "Docker, Ansible Installed"
 
