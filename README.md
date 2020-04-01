@@ -30,6 +30,9 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 # Clone Repo
 git clone https://github.com/cavalen/aolab-azure/
 ```
+
+Please reboot linux server after installing all packages !!!
+
 ### Part 2:
 2a) Azure Credentials. 
 You need to know the Subscription ID, Client ID, Secret and Tenant ID.
