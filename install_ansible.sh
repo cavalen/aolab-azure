@@ -7,3 +7,4 @@ pip3 install boto boto3 netaddr passlib f5-sdk f5-cli bigsuds deepdiff 'ansible[
 
 # Install Azure CLI 
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+az version
