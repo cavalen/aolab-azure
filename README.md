@@ -3,7 +3,7 @@
 ## Automation & Orchestration Lab in Azure
 
 Requeriments:
-- A Linux Server (Ubuntu 18.04 recommended)
+- A Linux Server (Ubuntu 18.04 recommended) with Internet access
 - Azure Account 
 
 This lab contains 3 parts:
