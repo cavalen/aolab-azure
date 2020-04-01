@@ -25,7 +25,7 @@ sudo docker run --name nginx02 --restart=unless-stopped -d -p 8085:80 nginx:late
 # Kafka Container - for Telemetry Streaming
 cd /home/f5student/
 git clone https://github.com/wurstmeister/kafka-docker
-rm /home/f5student/kafka-docker/docker-compose.yml
+rm -f /home/f5student/kafka-docker/docker-compose.yml
 curl https://raw.githubusercontent.com/cavalen/aolab-azure/master/files/docker-compose.yml -o /home/f5student/kafka-docker/docker-compose.yml
 cd /home/f5student/kafka-docker/
 sudo docker-compose up -d
