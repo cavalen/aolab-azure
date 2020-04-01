@@ -29,7 +29,7 @@ sudo docker run --name nginx02 --restart=unless-stopped -d -p 8085:80 nginx:late
 #sudo docker run -dit -h app3 --name=app3 --net=internal --restart unless-stopped registry.gitlab.com/mattdierick/arcadia-finance/app3:latest
 #sudo docker run -dit -h nginx --name=nginx --net=internal --restart unless-stopped -p 80:80 -v /home/ubuntu/arcadia/default.conf:/etc/nginx/conf.d/default.conf registry.gitlab.com/mattdierick/arcadia-finance/nginx_oss:latest
 
-# Kafka - for Telemetry Streaming
+# Kafka Container - for Telemetry Streaming
 cd /home/f5student/
 git clone https://github.com/wurstmeister/kafka-docker
 rm /home/f5student/kafka-docker/docker-compose.yml
