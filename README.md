@@ -59,8 +59,9 @@ RTFM
 
 ## DELETING THE LAB
 At the end of the Lab do not forget to delete the resources created to avoid unwanted charges
-You can delete the Lab running a provided Ansible Playbook
-Go to `./aolab-azure/deploy-lab` and run 
+
+You can delete the Lab by running a provided Ansible Playbook
+Go to `./aolab-azure/deploy-lab` and run:
 
 ```
 ansible_playbook 03_delete_lab_azure.yml
