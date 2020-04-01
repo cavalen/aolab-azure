@@ -61,11 +61,11 @@ ansible_playbook 02_deploy_bigip_1nic_azure.yml
 ## DELETING THE LAB
 At the end of the Lab do not forget to delete the resources created to avoid unwanted charges.
 
-You can delete the Lab by running a provided Ansible Playbook
-
+You can delete the Lab using a provided Ansible Playbook or manually deleting the Resource Group in the Azure Portal 
+ 
 Go to `./aolab-azure/deploy-lab` and run:
 
 ```
 ansible_playbook 03_delete_lab_azure.yml
 ```
-or manually deleting the Resource Group.
+
