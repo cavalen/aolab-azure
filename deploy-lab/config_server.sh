@@ -1,14 +1,12 @@
 !/bin/bash
 
-# Install Docker & Ansible
-sudo apt update
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install -y software-properties-common ansible docker docker-compose python3-pip
-pip3 install boto boto3 netaddr passlib f5-sdk bigsuds deepdiff 'ansible[azure]' 
-#curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-echo -e "Docker & Ansible Installed"
+# Install Docker, Ansible, Terraform
+sudo apt-add-repository --yes ppa:ansible/ansible
+sudo apt update && sudo apt -y upgrade
+sudo apt install -y software-properties-common ansible docker.io docker-compose python3-pip
+echo -e "Docker Installed"
 
-# Create lab containers
+# Run containers
 sudo docker run --name hackazon --restart unless-stopped -d -p 8080:80 -p 8443:443 ianwijaya/hackazon
 sudo docker run --name dvwa --restart unless-stopped -d -p 8081:80 vulnerables/web-dvwa
 sudo docker run --name f5helloworld --restart unless-stopped -d -p 8082:8080 f5devcentral/f5-hello-world 
@@ -23,7 +21,6 @@ sudo docker run --name nginx02 --restart=unless-stopped -d -p 8085:80 nginx:late
 #sudo docker run -dit -h app2 --name=app2 --net=internal --restart unless-stopped registry.gitlab.com/mattdierick/arcadia-finance/app2:latest
 #sudo docker run -dit -h app3 --name=app3 --net=internal --restart unless-stopped registry.gitlab.com/mattdierick/arcadia-finance/app3:latest
 #sudo docker run -dit -h nginx --name=nginx --net=internal --restart unless-stopped -p 80:80 -v /home/ubuntu/arcadia/default.conf:/etc/nginx/conf.d/default.conf registry.gitlab.com/mattdierick/arcadia-finance/nginx_oss:latest
-echo -e "Containers Created"
 
 # Kafka - for Telemetry Streaming
 cd /home/f5student/
@@ -32,6 +29,7 @@ rm /home/f5student/kafka-docker/docker-compose.yml
 curl https://raw.githubusercontent.com/cavalen/aolab-azure/master/files/docker-compose.yml -o /home/f5student/kafka-docker/docker-compose.yml
 cd /home/f5student/kafka-docker/
 sudo docker-compose up -d
+echo -e "Containers Created"
 
 # Clone Lab Repos
 cd /home/f5student/
