@@ -55,8 +55,8 @@ ansible_playbook 02_deploy_bigip_1nic_azure.yml
 
 ### Part 3:
 
-RTFM
-
+===> RTFM <===
+ 
 
 ## DELETING THE LAB
 At the end of the Lab do not forget to delete the resources created to avoid unwanted charges.
