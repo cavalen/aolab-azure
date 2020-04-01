@@ -69,3 +69,4 @@ Go to `./aolab-azure/deploy-lab` and run:
 ansible_playbook 03_delete_lab_azure.yml
 ```
 
+.
