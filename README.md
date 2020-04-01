@@ -62,6 +62,7 @@ ansible_playbook 02_deploy_bigip_1nic_azure.yml
 At the end of the Lab do not forget to delete the resources created to avoid unwanted charges.
 
 You can delete the Lab by running a provided Ansible Playbook
+
 Go to `./aolab-azure/deploy-lab` and run:
 
 ```
