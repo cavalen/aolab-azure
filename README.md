@@ -12,9 +12,7 @@ This lab contains 3 parts:
 - A&O Lab (Provided PDF Guide)
 
 ### Part 1: 
-Install Ansible and additional requeriments in a Linux server (or Virtual Machine) to deploy infrastructure in Azure.
-     
-     ... You can use MacOS but you need to install Ansible and Python-pip using a package manger like `brew`.
+Install Ansible and additional requeriments in a Linux server (or Virtual Machine) to deploy infrastructure in Azure. You can use MacOS but you need to install Ansible and Python-pip using a package manger like `brew`.
 
 SSH to your Linux server and check/run `install_ansible.sh`:
 
@@ -32,7 +30,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 git clone https://github.com/cavalen/aolab-azure/
 ```
 
-Please reboot linux server after installing all packages !!!
+** Please reboot you linux server after installing all packages !!! **
 
 ### Part 2:
 2a) Azure Credentials. 
