@@ -1,6 +1,6 @@
 # aolab-azure
 
-## Automation & Orchestration Lab in Azure
+## F5 Automation & Orchestration Lab in Azure
 
 Requeriments:
 - A Linux Server (Ubuntu 18.04 recommended) with Internet access
