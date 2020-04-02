@@ -7,9 +7,9 @@ Requeriments:
 - Azure Account 
 
 This lab contains 3 parts:
-- Ansible & Dependecies installation in a Linux server 
-- Lab/Infrasctructure deployment in Azure
-- A&O Lab (Provided PDF Guide)
+1.  Ansible & Dependecies installation in a Linux server 
+2.  Lab/Infrasctructure deployment in Azure
+3.  A&O Lab (Provided PDF Guide)
 
 ### Part 1: 
 Install Ansible and additional requeriments in a Linux server (or Virtual Machine) to deploy infrastructure in Azure. You can use MacOS but you need to install Ansible and Python-pip using a package manger like `brew`.
@@ -57,7 +57,7 @@ ansible_playbook 02_deploy_bigip_1nic_azure.yml
 
 ### Part 3:
 
-===> RTFM <===
+**:fire: RTFM :fire:**
  
 
 ## DELETING THE LAB
@@ -71,4 +71,4 @@ Go to `./aolab-azure/deploy-lab` and run:
 ansible_playbook 03_delete_lab_azure.yml
 ```
 
-.
+:poop:
