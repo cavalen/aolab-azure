@@ -13,9 +13,9 @@ This lab contains 3 parts:
 
 ### Part 1: 
 Install Ansible and additional requeriments in a Linux server (or Virtual Machine) to deploy infrastructure in Azure.
-You can use MacOS but you need to install Ansible and Python-pip using a package manger like `brew`.
+     ... You can use MacOS but you need to install Ansible and Python-pip using a package manger like `brew`.
 
-Check/run `install_ansible.sh` if using Linux:
+SSH to your Linux server and check/run `install_ansible.sh`:
 
 ```
 # Install Ansible & Dependencies (For Ubuntu 18.04 LTS)
