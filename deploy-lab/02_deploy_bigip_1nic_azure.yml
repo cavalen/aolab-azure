@@ -73,7 +73,7 @@
               - name: 'Allow_HTTP_80'
                 protocol: Tcp
                 source_address_prefix: '{{ ALLOWED_SRC_ADDRESS }}'
-                destination_port_range: 800
+                destination_port_range: 80
                 access: Allow
                 priority: 104
                 direction: Inbound
