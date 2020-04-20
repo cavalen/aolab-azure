@@ -72,5 +72,17 @@ ansible_playbook 03_delete_lab_azure.yml
 ```
 
 
+### Docker Services:
+In the Ubuntu Docker Server you will find the following services, used as Pool members: 
 
+- Port 80   (Hackazon)
+- Port 443  (Hackazon)
+- Port 8081 (DVWA)
+- Port 8082 (Hello World, simple HTTP page)
+- Port 8083 (OWASP Juice Shop)
+- Port 8084 (NGINX default homepage)
+- Port 8085 (NGINX default homepage)
+
+
+.
 :poop:
