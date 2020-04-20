@@ -58,8 +58,9 @@ ansible_playbook 02_deploy_bigip_1nic_azure.yml
 ### Part 3:
 
 **:fire: RTFM :fire:**
- 
-
+  
+  
+  
 ## DELETING THE LAB
 At the end of the Lab do not forget to delete the resources created to avoid unwanted charges.
 
@@ -70,8 +71,8 @@ Go to `./aolab-azure/deploy-lab` and run:
 ```
 ansible_playbook 03_delete_lab_azure.yml
 ```
-
-
+  
+  
 ### Aditional Notes:
 In the Ubuntu Docker Server installed with Playbook 01, you will find the following services, used as Pool members: 
 
@@ -82,7 +83,8 @@ In the Ubuntu Docker Server installed with Playbook 01, you will find the follow
 - Port 8083 (OWASP Juice Shop)
 - Port 8084 (NGINX default homepage)
 - Port 8085 (NGINX default homepage)
-
-
-.
+  
+  
+  
+  
 :poop:
