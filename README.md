@@ -72,8 +72,8 @@ ansible_playbook 03_delete_lab_azure.yml
 ```
 
 
-### Docker Services:
-In the Ubuntu Docker Server you will find the following services, used as Pool members: 
+### Aditional Notes:
+In the Ubuntu Docker Server installed with Playbook 01, you will find the following services, used as Pool members: 
 
 - Port 80   (Hackazon)
 - Port 443  (Hackazon)
