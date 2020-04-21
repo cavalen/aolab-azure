@@ -2,8 +2,8 @@
 
 ## F5 Automation & Orchestration Lab in Azure
 
-Requeriments:\
-To run this lab you will need
+**Requeriments**\
+To run this lab you will need:
 - A Linux Server (Ubuntu 18.04 Virtual Machine recommended) with Internet access
 - Azure Account 
 
