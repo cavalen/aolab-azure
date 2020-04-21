@@ -11,7 +11,6 @@ This lab contains 3 parts:
 1.  Ansible & Dependecies installation in a Linux server 
 2.  Lab/Infrasctructure deployment in Azure
 3.  A&O Lab (Provided PDF Guide)
-<br />
 
 ### Part 1: 
 In your Linux Server install Ansible and additional requeriments needed to deploy the infrastructure in Azure. *You can use MacOS but you need to install ansible and python-pip using a package manger like `brew`.*
