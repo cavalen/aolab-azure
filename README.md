@@ -19,6 +19,7 @@ SSH to your Linux server, clone this repo and check/run `install_ansible.sh`:
 
 ```
 # install_ansible.sh
+
 # Install Ansible & Dependencies (For Ubuntu 18.04 LTS)
 sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt update && sudo apt -y upgrade
@@ -28,8 +29,6 @@ pip3 install boto boto3 netaddr passlib f5-sdk fi-cli bigsuds deepdiff 'ansible[
 # Install Azure CLI 
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-# Clone Repo
-git clone https://github.com/cavalen/aolab-azure/
 ```
 
 :warning: ***Please reboot you linux server after installing all packages !!!*** :warning:
