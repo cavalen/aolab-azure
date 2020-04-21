@@ -4,7 +4,7 @@
 
 **Requeriments**\
 To run this lab you will need:
-- A Linux Server (Ubuntu 18.04 Virtual Machine recommended) with Internet access
+- A Linux Server with Internet access (Ubuntu 18.04 Virtual Machine recommended) 
 - Azure Account 
 
 This lab contains 3 parts:
