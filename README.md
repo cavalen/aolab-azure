@@ -85,7 +85,7 @@ TL;DR: **RTFM** :book:
 <br />
 <br />
   
-## DELETING THE LAB :bangbang:
+## :bangbang: DELETING THE LAB :bangbang:
 At the end of the Lab do not forget to delete the resources created to avoid unwanted charges.
 
 You can delete the Lab using a provided Ansible Playbook or manually deleting the Resource Group in the Azure Portal 
