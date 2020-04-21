@@ -51,12 +51,16 @@ Create/edit the file `$HOME/.azure/credentials` with the following syntax and us
 
 Go to `./aolab-azure/deploy-lab`, edit the `config.yml` file and change the `STUDENT_ID` paramenter, using ***lowercase letters and numbers ONLY.***
 
-Go to `./aolab-azure/deploy-lab` and run the playbooks in order:
+In the `deploy-lab` folder run the playbooks in order:
 ```
-ansible_playbook 01_deploy_ubuntu_docker_azure.yml
-ansible_playbook 02_deploy_bigip_1nic_azure.yml
+ansible_playbook 01_deploy_rg_vnet_azure.yml
+ansible_playbook 02_deploy_ubuntu_docker_azure.yml
+ansible_playbook 03_deploy_bigip_2nic_azure.yml
 ```
 <br />
+
+** Azure resources**
+The first playbook create a Resource Group, a Security Group and a VNET (10.1.0.0/16) with 3 Subnets: Management (10.1.1.0/24), External (10.1.10.0/24) and Internal (10.1.20.0)
 
 **Ubuntu Docker Server**\
 In the Ubuntu Docker Server installed with Playbook 01, you will find the following services, used as Pool members: 
