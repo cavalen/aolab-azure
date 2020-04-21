@@ -59,7 +59,7 @@ ansible_playbook 03_deploy_bigip_2nic_azure.yml
 ```
 <br />
 
-** Azure resources**
+**Azure resources**
 The first playbook create a Resource Group, a Security Group and a VNET (10.1.0.0/16) with 3 Subnets: Management (10.1.1.0/24), External (10.1.10.0/24) and Internal (10.1.20.0)
 
 **Ubuntu Docker Server**\
