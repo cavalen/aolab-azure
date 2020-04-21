@@ -73,7 +73,7 @@ The second playbook deploys an Ubuntu Server with Docker and the following servi
 - Port 8085 (NGINX default homepage)
 
 **03 BIG-IP**\
-The third playbook deploys a 2-NIC BIG-IP (PAYG) instance using a supported ARM template:\
+The third playbook deploys a 2-NIC BIG-IP instance (PAYG) using a supported ARM template:\
 https://github.com/F5Networks/f5-azure-arm-templates/tree/master/supported/standalone/2nic/existing-stack/payg
 <br />
 
