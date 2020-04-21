@@ -2,7 +2,8 @@
 
 ## F5 Automation & Orchestration Lab in Azure
 
-Requeriments:
+Requeriments:\
+To run this lab you will need
 - A Linux Server (Ubuntu 18.04 recommended) with Internet access
 - Azure Account 
 
@@ -30,7 +31,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 git clone https://github.com/cavalen/aolab-azure/
 ```
 
-***Please reboot you linux server after installing all packages !!!***
+:warning: ***Please reboot you linux server after installing all packages !!!*** :warning:
 
 ### Part 2:
 2a) Azure Credentials. 
@@ -54,6 +55,24 @@ Go to `./aolab-azure/deploy-lab` and run the playbooks in order:
 ansible_playbook 01_deploy_ubuntu_docker_azure.yml
 ansible_playbook 02_deploy_bigip_1nic_azure.yml
 ```
+<br />
+
+**Ubuntu Docker Server**\
+In the Ubuntu Docker Server installed with Playbook 01, you will find the following services, used as Pool members: 
+
+- Port 80   (Hackazon)
+- Port 443  (Hackazon)
+- Port 8081 (DVWA)
+- Port 8082 (Hello World, simple HTTP page)
+- Port 8083 (OWASP Juice Shop)
+- Port 8084 (NGINX default homepage)
+- Port 8085 (NGINX default homepage)
+
+**BIG-IP**\
+This is a 2-NIC instance using Pay-As-You-Go (PAYG) licensing and is deployed using the following template:\
+https://github.com/F5Networks/f5-azure-arm-templates/tree/master/supported/standalone/2nic/existing-stack/payg
+<br />
+
 
 ### Part 3:
 
@@ -75,19 +94,5 @@ ansible_playbook 03_delete_lab_azure.yml
 <br />
 <br />
 <br />
-  
-### Aditional Notes:
-In the Ubuntu Docker Server installed with Playbook 01, you will find the following services, used as Pool members: 
-
-- Port 80   (Hackazon)
-- Port 443  (Hackazon)
-- Port 8081 (DVWA)
-- Port 8082 (Hello World, simple HTTP page)
-- Port 8083 (OWASP Juice Shop)
-- Port 8084 (NGINX default homepage)
-- Port 8085 (NGINX default homepage)
-  
-  
-  
   
 :poop:
