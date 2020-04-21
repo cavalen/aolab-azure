@@ -49,7 +49,7 @@ Create/edit the file `$HOME/.azure/credentials` with the following syntax and us
 
 2b) Deploy Azure infrastructure using Ansible:
 
-Go to `./aolab-azure/deploy-lab`, edit the `config.yml` file and change the `STUDENT_ID` paramenter, using ***lowercase letters and numbers ONLY.***
+Go to `./aolab-azure/deploy-lab`, edit `config.yml` and change the `STUDENT_ID` paramenter, using ***lowercase letters and numbers ONLY.***
 
 In the `deploy-lab` folder run the playbooks in order:
 ```
