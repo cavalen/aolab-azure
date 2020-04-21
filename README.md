@@ -49,7 +49,7 @@ Create/edit the file `$HOME/.azure/credentials` with the following syntax and us
 
 2b) Deploy Azure infrastructure using Ansible:
 
-Go to `./aolab-azure/deploy-lab`, edit `config.yml` and change the `STUDENT_ID` paramenter, using ***lowercase letters and numbers ONLY.***
+Go to `./aolab-azure/deploy-lab`, edit `config.yml` and change the `STUDENT_ID` paramenter using ***lowercase letters and numbers ONLY.***
 
 In the `deploy-lab` folder run the playbooks in order:
 ```
@@ -59,10 +59,10 @@ ansible_playbook 03_deploy_bigip_2nic_azure.yml
 ```
 <br />
 
-**Azure resources**
+**01 Azure resources**
 The first playbook creates a Resource Group, a Security Group and a VNET (10.1.0.0/16) with 3 Subnets: Management (10.1.1.0/24), External (10.1.10.0/24) and Internal (10.1.20.0)
 
-**Ubuntu Docker Server**\
+**02 Ubuntu Docker Server**\
 The second playbook deploys an Ubuntu Server with Docker and the following services, used as Pool members: 
 - Port 80   (Hackazon)
 - Port 443  (Hackazon)
@@ -72,7 +72,7 @@ The second playbook deploys an Ubuntu Server with Docker and the following servi
 - Port 8084 (NGINX default homepage)
 - Port 8085 (NGINX default homepage)
 
-**BIG-IP**\
+**03 BIG-IP**\
 The third playbook deploys a 2-NIC BIG-IP (PAYG) instance using a supported ARM template:\
 https://github.com/F5Networks/f5-azure-arm-templates/tree/master/supported/standalone/2nic/existing-stack/payg
 <br />
