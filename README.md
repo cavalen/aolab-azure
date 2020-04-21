@@ -63,7 +63,7 @@ ansible_playbook 03_deploy_bigip_2nic_azure.yml
 The first playbook creates a Resource Group, a Security Group and a VNET (10.1.0.0/16) with 3 Subnets: Management (10.1.1.0/24), External (10.1.10.0/24) and Internal (10.1.20.0)
 
 **Ubuntu Docker Server**\
-The second playbook deploys and Ubuntu Server with Docker and the following services, used as Pool members: 
+The second playbook deploys an Ubuntu Server with Docker and the following services, used as Pool members: 
 - Port 80   (Hackazon)
 - Port 443  (Hackazon)
 - Port 8081 (DVWA)
@@ -73,7 +73,7 @@ The second playbook deploys and Ubuntu Server with Docker and the following serv
 - Port 8085 (NGINX default homepage)
 
 **BIG-IP**\
-The third playbook deploys a 2-NIC BIG-IP Pay-As-You-Go (PAYG) instance using a supported ARM template:\
+The third playbook deploys a 2-NIC BIG-IP (PAYG) instance using a supported ARM template:\
 https://github.com/F5Networks/f5-azure-arm-templates/tree/master/supported/standalone/2nic/existing-stack/payg
 <br />
 
