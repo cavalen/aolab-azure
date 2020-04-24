@@ -55,9 +55,9 @@ Edit `config.yml` and change the `STUDENT_ID` paramenter using ***lowercase lett
 
 In the `deploy-lab` folder run the playbooks in order:
 ```
-ansible_playbook 01_deploy_rg_vnet_azure.yml
-ansible_playbook 02_deploy_ubuntu_docker_azure.yml
-ansible_playbook 03_deploy_bigip_2nic_azure.yml
+ansible-playbook 01_deploy_rg_vnet_azure.yml
+ansible-playbook 02_deploy_ubuntu_docker_azure.yml
+ansible-playbook 03_deploy_bigip_2nic_azure.yml
 ```
 <br />
 
