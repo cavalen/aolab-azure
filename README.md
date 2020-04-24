@@ -93,7 +93,7 @@ You can delete the Lab using a provided Ansible Playbook or manually deleting th
 Go to `./aolab-azure/deploy-lab` and run:
 
 ```
-ansible_playbook 03_delete_lab_azure.yml
+ansible_playbook 99_delete_lab_azure.yml
 ```
 <br />
 <br />
