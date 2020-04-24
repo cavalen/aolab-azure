@@ -40,11 +40,11 @@ You need your Subscription ID, Client ID, Secret and Tenant ID.
 
 Create/edit the file `$HOME/.azure/credentials` with the following syntax and using your account info:
 ```
-# [default]
-# subscription_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-# client_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-# secret=xxxxxxxxxxxxxxxxx
-# tenant=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+[default]
+subscription_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+client_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+secret=xxxxxxxxxxxxxxxxx
+tenant=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
 2b) Deploy Azure infrastructure using Ansible:
