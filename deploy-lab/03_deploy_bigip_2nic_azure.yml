@@ -11,7 +11,7 @@
     - name: THIS CAN TAKE SOME TIME (10-15 MIN) ... HAVE A COFFEE AND RELAX!
       debug: msg="Starting now @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }} "
       
-    - name: Deploy F5 BIG-IP on Azure - BYOL - Existing Stack
+    - name: Deploy F5 BIG-IP on Azure - PAYG - Existing Stack
       azure_rm_deployment:
         state: present
         resource_group_name: "{{ RESOURCE_GROUP }}"
