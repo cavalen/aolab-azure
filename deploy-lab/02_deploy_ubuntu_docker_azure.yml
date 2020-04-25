@@ -11,7 +11,7 @@
 
   tasks:
   
-    - name: STARTING NOW ...
+    - name: STARTING NOW ... THIS CAN TAKE SOME TIME (10-15 MIN) ... HAVE A COFFEE AND RELAX!
       debug: msg="Starting now @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }}"
 
     - name: Create Server NIC {{ NODE_NAME }}-{{ STUDENT_ID }}-int-nic0 with Security Group {{ NODE_NAME }}-{{ STUDENT_ID }}-sg0
