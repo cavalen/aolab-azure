@@ -8,7 +8,7 @@
     - ./config.yml
 
   tasks:
-    - name: THIS CAN TAKE SOME TIME (7-10 MIN) ... HAVE A COFFEE AND RELAX!
+    - name: Starting Now ... THIS CAN TAKE SOME TIME (7-10 MIN) ... HAVE ANOTHER COFFEE :)
       debug: msg="Starting now @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }} "
       
     - name: Deploy F5 BIG-IP on Azure - PAYG - Existing Stack
