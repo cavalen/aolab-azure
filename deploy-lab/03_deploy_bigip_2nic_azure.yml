@@ -31,9 +31,9 @@
           numberOfExternalIps:
             value: 1
           instanceType:
-            value: "Standard_DS3_v2"
+            value: "Standard_DS2_v2"
           imageName:
-            value: "Best25Mbps"
+            value: "Best200Mbps"
           bigIpVersion:
             value: "latest"
           bigIpModules:
@@ -66,10 +66,12 @@
             value: "OPTIONAL"
           restrictedSrcAddress:
             value: "{{ ALLOWED_SRC_ADDRESS }}"
-          allowUsageAnalytics:
-            value: "No"
           tagValues: 
             value: {"application":"APP","cost":"COST","environment":"ENV","group":"GROUP","owner":"OWNER"}
+          allowUsageAnalytics:
+            value: "No"
+          allowPhoneHome:
+            value: "Yes"
 
     - name: Modify BIG-IP Network Security Group with new rules ({{ BIGIP_NAME }}-{{ STUDENT_ID }}-mgmt-nsg)
       azure_rm_securitygroup:
