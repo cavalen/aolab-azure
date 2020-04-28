@@ -43,7 +43,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 2a) Azure Credentials. 
 You need your Subscription ID, Client ID, Secret and Tenant ID.
 
-Create/edit the file `$HOME/.azure/credentials` with the following syntax and using your account info:
+Create or edit the file `$HOME/.azure/credentials` with the following syntax and using your account info:
 ```
 [default]
 subscription_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
