@@ -82,7 +82,7 @@ https://github.com/F5Networks/f5-azure-arm-templates/tree/master/supported/stand
 
 ### Part 3:
 Refer to the provided guide to run through the A&O lab.\
-:book: :book:
+:book: RTFM :book:
 <br />
 <br />
 <br />
