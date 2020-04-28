@@ -90,7 +90,7 @@ Refer to the provided guide to run through the A&O lab.\
 ## :heavy_exclamation_mark: DELETING THE LAB :heavy_exclamation_mark:
 At the end of the Lab do not forget to delete the resources created to avoid unwanted charges.
 
-You can delete the Lab using a provided Ansible Playbook or manually deleting the Resource Group in the Azure Portal 
+You can delete the Lab using the provided Ansible Playbook or manually deleting the Resource Group in Azure Portal
  
 Go to `./aolab-azure/deploy-lab` and run:
 
