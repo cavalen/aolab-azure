@@ -20,7 +20,7 @@ This lab contains 3 parts:
 In your Linux Server install Ansible and additional requeriments needed to deploy the infrastructure in Azure.\
 Note: This instructions are for Ubuntu, *you could use MacOS but you need to install ansible and python-pip using a package manger like `brew`.*
 
-SSH into your Linux server, clone this repo and check/run `install_ansible.sh`:
+SSH into your Linux server, clone this repo, then go to `aolab-azure/deploy-lab` and check/run `install_ansible.sh`:
 
 ```
 # install_ansible.sh
