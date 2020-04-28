@@ -7,9 +7,9 @@ To run this lab you will need:
 - A Linux Server with Internet access (Ubuntu 18.04 Virtual Machine recommended) 
 - Azure Account Information
   - Subscription ID
-  - Client ID
-  - Secret 
-  - Tenant ID
+  - Client ID (Application ID)
+  - Secret (Client Secret)
+  - Tenant ID (Directory ID)
 
 This lab contains 3 parts:
 1.  Ansible & Dependecies installation in a Linux server 
