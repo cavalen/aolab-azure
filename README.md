@@ -26,8 +26,9 @@ SSH into your Linux server, clone this repo, then go to `aolab-azure/deploy-lab`
 # install_ansible.sh
 
 # Install Ansible & Dependencies (For Ubuntu 18.04 LTS)
+sudo apt update
 sudo apt-add-repository --yes ppa:ansible/ansible
-sudo apt update && sudo apt -y upgrade
+sudo apt -y upgrade
 sudo apt install -y docker.io python3-pip docker-compose git ansible
 pip3 install boto boto3 netaddr passlib f5-sdk bigsuds deepdiff 'ansible[azure]' 
 
