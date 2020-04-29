@@ -55,7 +55,7 @@ tenant=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 2b) Deploy Azure infrastructure using Ansible:
 
 Go to folder `aolab-azure/deploy-lab`\
-Edit `config.yml` and change the `STUDENT_ID` paramenter using ***lowercase letters and numbers ONLY.***
+Edit `config.yml` and change the `STUDENT_ID` paramenter. Use ***lowercase letters and numbers only.***
 
 In the `deploy-lab` folder run the playbooks in order:
 ```
