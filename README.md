@@ -6,10 +6,10 @@
 To run this lab you will need:
 - A Linux Server with Internet access (Ubuntu 18.04 Virtual Machine recommended) 
 - Azure Account Information
-  - Subscription ID
-  - Client ID (Application ID)
-  - Secret (Client Secret)
-  - Tenant ID (Directory ID)
+  - [Subscription ID](https://portal.azure.com/?quickstart=true#blade/Microsoft_Azure_Billing/SubscriptionsBlade)
+  - [Client ID (Application ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
+  - [Secret (Client Secret)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
+  - [Tenant ID (Directory ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview)
 
 This lab contains 3 parts:
 1.  Ansible & Dependecies installation in a Linux server 
