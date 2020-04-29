@@ -65,6 +65,13 @@ ansible-playbook 03_deploy_bigip_2nic_azure.yml
 ```
 <br />
 
+If you already have an Azure Account and get a 403 error like this:
+```
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error checking for existence of name AO-LAB-student - 403 Client Error: Forbidden for url: https://management.azure.com/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/AO-LAB-student?api-version=2017-05-10"}
+
+```
+You need to add a **Contributor Role** to your Registered Application in Azure.
+
 **01 Azure resources**\
 The first playbook creates a Resource Group, a Security Group and a VNET (10.1.0.0/16) with 3 Subnets: Management (10.1.1.0/24), External (10.1.10.0/24) and Internal (10.1.20.0/24)
 
