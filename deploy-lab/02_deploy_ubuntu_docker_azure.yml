@@ -40,9 +40,9 @@
         admin_username: "{{ NODE_USER }}"
         admin_password: "{{ NODE_PASSWORD }}"
         network_interfaces: "{{ NODE_NAME }}-{{ STUDENT_ID }}-int-nic0"
-        boot_diagnostics:
-          enabled: true
-          storage_account: "sa{{ STUDENT_ID }}{{ date }}"
+        #boot_diagnostics:
+          #enabled: true
+          #storage_account: "sa{{ STUDENT_ID }}{{ date }}"
         append_tags: True
         tags:
           OperatingSystem: "Ubuntu"
