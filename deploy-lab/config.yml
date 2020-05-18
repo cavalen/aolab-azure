@@ -21,12 +21,13 @@ STUDENT_ID: cav
 
 RESOURCE_GROUP: AO-LAB-{{ STUDENT_ID }}
 
-DEFAULT_LOCATION: "Central US"
+#DEFAULT_LOCATION: "Central US"
+DEFAULT_LOCATION: "Brazil South"
 
-VNET1: aolab-vnet-{{ STUDENT_ID }}
-VNET_SUBNET_MGMT: aolab-subnet-mgmt-{{ STUDENT_ID }}
-VNET_SUBNET_INT: aolab-subnet-int-{{ STUDENT_ID }}
-VNET_SUBNET_EXT: aolab-subnet-ext-{{ STUDENT_ID }}
+VNET1: lab-vnet-{{ STUDENT_ID }}
+VNET_SUBNET_MGMT: lab-subnet-mgmt-{{ STUDENT_ID }}
+VNET_SUBNET_INT: lab-subnet-int-{{ STUDENT_ID }}
+VNET_SUBNET_EXT: lab-subnet-ext-{{ STUDENT_ID }}
 
 NODE_NAME: lamp-server
 BIGIP_NAME: bigip
