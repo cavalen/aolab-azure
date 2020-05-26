@@ -82,9 +82,9 @@ The second playbook deploys an Ubuntu Server with Docker and the following servi
 - Port 80   (Hackazon)
 - Port 443  (Hackazon)
 - Port 8081 (DVWA)
-- Port 8082 (Hello World, simple HTTP page)
+- Port 8082 (OWASP bWAPP)
 - Port 8083 (OWASP Juice Shop)
-- Port 8084 (NGINX default homepage)
+- Port 8084 (Hello World, simple HTTP page)
 - Port 8085 (NGINX default homepage)
 
 **03 BIG-IP**\
