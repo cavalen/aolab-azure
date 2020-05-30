@@ -38,7 +38,6 @@
         storage_account: "sa{{ STUDENT_ID }}{{ date }}"
         storage_container: "{{ NODE_NAME }}{{ STUDENT_ID }}"
         storage_blob: "{{ NODE_NAME }}{{ STUDENT_ID }}.vhd"
-        ssh_password_enabled: true
         admin_username: "{{ NODE_USER }}"
         admin_password: "{{ NODE_PASSWORD }}"
         network_interfaces: "{{ NODE_NAME }}-{{ STUDENT_ID }}-int-nic0"
