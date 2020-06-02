@@ -70,6 +70,7 @@
         resource_group: "{{ RESOURCE_GROUP }}"
         name: "sa{{ STUDENT_ID }}{{ date }}"
         account_type: Standard_LRS
+        kind: StorageV2
 
     - name: Edit {{ NODE_NAME }}-{{ STUDENT_ID }}-sg0 Security Group in Resource Group {{ RESOURCE_GROUP }} (Allow DATA and Access)
       azure_rm_securitygroup:
