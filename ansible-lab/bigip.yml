@@ -1,0 +1,4 @@
+ADMINUSERNAME: azureuser
+ADMINPASSWORD: f5DEMOs4uLATAM
+BIGIP: bigiplab-cav.brazilsouth.cloudapp.azure.com
+MGMT_PORT: 443
