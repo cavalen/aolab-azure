@@ -3,13 +3,16 @@
 - name: Remove VIP, pool, pool members and nodes
   hosts: localhost
 
+  vars_files:
+  - ./bigip.yml
+
   vars:
     provider:
-      password: f5DEMOs4uLATAM
-      server: 10.1.10.245
-      user: azureuser
+      user: "{{ ADMINUSERNAME }}"
+      password: "{{ ADMINPASSWORD }}"
+      server: "{{ BIGIP }}"
       validate_certs: no
-      server_port: 443
+      server_port: "{{ MGMT_PORT }}"
 
   tasks:
     - name: Destroy a VIP
