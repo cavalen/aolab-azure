@@ -72,8 +72,9 @@ fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error checking for exi
 Forbidden for url: https://management.azure.com/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/AO-LAB-student?api-version=2017-05-10"}
 
 ```
-You need to add a **Contributor Role** to your Registered Application in Azure.
+You need to add a **Contributor Role** to your Registered Application in Azure. See the PDF guide for more info.
 
+**Playbook Description:**
 **01 Azure resources**\
 The first playbook creates a Resource Group, a Security Group and a VNET (10.1.0.0/16) with 3 Subnets: Management (10.1.1.0/24), External (10.1.10.0/24) and Internal (10.1.20.0/24)
 
