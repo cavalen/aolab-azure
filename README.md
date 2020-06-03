@@ -63,6 +63,7 @@ In the `deploy-lab` folder run the playbooks in order:
 ansible-playbook 01_deploy_rg_vnet_azure.yml
 ansible-playbook 02_deploy_ubuntu_docker_azure.yml
 ansible-playbook 03_deploy_bigip_2nic_azure.yml
+ansible-playbook 04_get_information.yml
 ```
 <br />
 
@@ -91,6 +92,13 @@ The second playbook deploys an Ubuntu Server with Docker and the following servi
 **Playbook 03 - BIG-IP**\
 The third playbook deploys a 2-NIC BIG-IP instance (PAYG) using a supported ARM template:\
 https://github.com/F5Networks/f5-azure-arm-templates/tree/master/supported/standalone/2nic/existing-stack/payg
+
+**Playbook 04 - Get Infrastructure Information**\
+The last playbook displays information relevant for the lab, and saves that information in a local file: **info.txt**
+- Lamp Server Public IP and DNS Record
+- BIG-IP Management URL
+- Virtual Servers Public IP and DNS Record
+
 <br />
 
 
