@@ -16,29 +16,16 @@ This lab contains 3 parts:
 2.  Lab/Infrasctructure deployment in Azure
 3.  A&O Lab (Provided PDF Guide)
 
-### Part 1: 
-In your Linux Server install Ansible and additional requeriments needed to deploy the infrastructure in Azure.\
-Note: This instructions are for Ubuntu, *you could use MacOS but you need to install ansible and python-pip using a package manger like `brew`.*
 
-SSH into your Linux server, clone this repo, then go to `aolab-azure/deploy-lab` and check/run `install_ansible.sh`:
 
-```
-# install_ansible.sh
-
-# Install Ansible & Dependencies (For Ubuntu 18.04 LTS)
-sudo apt update
-sudo apt-add-repository --yes ppa:ansible/ansible
-sudo apt -y upgrade
-sudo apt install -y docker.io python3-pip docker-compose git ansible
-pip3 install boto boto3 netaddr passlib f5-sdk bigsuds deepdiff 'ansible[azure]' 
-
-# Install Azure CLI 
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+### Part 1: Download Ubuntu Container with all the necessary tools
+You need a machine with Docker. You can get Docker for Windows/Mac at [this link](https://www.docker.com/products/docker-desktop)\
+Now, use a pre-configured Docker Container running Ubuntu and Ansible to deploy the infrastructure:\
+Open an interactive console to the container: 
 
 ```
-
-:warning: ***Please reboot you linux server after installing all packages !!!*** :warning:
-<br />
+docker run -it --name ubuntu-vlab cavalen/ubuntu18-vlab
+```
 
 ### Part 2:
 2a) Azure Credentials. 
