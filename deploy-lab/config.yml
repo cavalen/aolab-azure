@@ -1,5 +1,5 @@
 #
-# To autenticate against Azure, create/edit the file $HOME/.azure/credentials using the following syntax:
+# To authenticate with Azure, create/edit the file $HOME/.azure/credentials using the following syntax:
 #
 # [default]
 # subscription_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -9,12 +9,12 @@
 
 
 # Student_ID. Use lowercase and numbers only
-STUDENT_ID: cav
+STUDENT_ID: student
 
-RESOURCE_GROUP: AO-LAB-{{STUDENT_ID}}
+RESOURCE_GROUP: "{{STUDENT_ID}}-vlab"
 
-DEFAULT_LOCATION: "Central US"
-#DEFAULT_LOCATION: "Brazil South"
+#Some Locations: "Central US" "East US 2" "East US" "West US" "South Central US" "Brazil South"
+DEFAULT_LOCATION: "East US"
 
 VNET1: lab-vnet-{{STUDENT_ID}}
 
@@ -43,6 +43,8 @@ BIGIP_NAME: bigiplab
 ADMINUSERNAME: azureuser
 ADMINPASSWORD: f5DEMOs4uLATAM
 
+# Network Security Group config, for BIG-IP and Server ... 
+ALLOWED_PORTS: [22,80,443,8080-8086,8443,3000]
 ALLOWED_SRC_ADDRESS: "0.0.0.0/0"
 
 # This lab uses a PAYG template for BIG-IP. No need for license
