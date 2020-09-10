@@ -26,6 +26,7 @@ Open an interactive console to the container:
 ```
 docker run -it --name ubuntu-vlab cavalen/ubuntu18-vlab
 ```
+You will be using user `ubuntu` for the rest of the lab.
 
 ### Part 2:
 2a) Azure Credentials. 
