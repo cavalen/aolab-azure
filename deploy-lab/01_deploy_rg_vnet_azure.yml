@@ -72,7 +72,7 @@
         kind: StorageV2
         account_type: Standard_LRS
 
-    - name: Create vlab-{{ STUDENT_ID }}-sg0 Security Group
+    - name: Create {{ NODE_NAME }}-{{ STUDENT_ID }}-sg0 Security Group
       azure_rm_securitygroup:
           resource_group: "{{ RESOURCE_GROUP }}"
           name: "{{ NODE_NAME }}-{{ STUDENT_ID }}-sg0"
