@@ -75,7 +75,7 @@
     - name: Create vlab-{{ STUDENT_ID }}-sg0 Security Group
       azure_rm_securitygroup:
           resource_group: "{{ RESOURCE_GROUP }}"
-          name: "vlab-{{ STUDENT_ID }}-sg0"
+          name: "{{ NODE_NAME }}-{{ STUDENT_ID }}-sg0"
           purge_rules: no
           rules:
               - name: 'Allow_TCP_{{item}}'
