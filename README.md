@@ -12,7 +12,7 @@ To run this lab you will need:
   - [Tenant ID (Directory ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview)
 
 This lab contains 3 parts:
-1.  Ansible & Dependecies installation in a Linux server 
+1.  Run a Docker Container with Ansible and other tools needed to deploy the Lab Environment
 2.  Lab/Infrasctructure deployment in Azure
 3.  A&O Lab (Provided PDF Guide)
 
