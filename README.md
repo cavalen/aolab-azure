@@ -24,7 +24,7 @@ Now, use a pre-configured Docker Container running Ubuntu and Ansible to deploy 
 Open an interactive console to the container: 
 
 ```
-docker run -it --name ubuntu-vlab cavalen/ubuntu18-vlab
+docker run -it --name ubuntu-vlab cavalen/ubuntu-vlab
 ```
 You will be using user `ubuntu` for the rest of the lab.
 
