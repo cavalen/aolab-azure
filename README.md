@@ -140,13 +140,14 @@ At the end of the Lab do not forget to delete the resources created to avoid unw
 
 Manually delete the Resource Group in the Azure Portal
  
-If using Ansible, go to `/home/ubuntu/aolab-azure/deploy-lab` and run:
-```
-ansible_playbook 99_delete_lab_azure.yml
-```
 If using Terraform , go to `/home/ubuntu/aolab-azure/deploy-tf` and run:
 ```
 terraform destroy
+``` 
+
+If using Ansible, go to `/home/ubuntu/aolab-azure/deploy-lab` and run:
+```
+ansible_playbook 99_delete_lab_azure.yml
 ```
 
 <br />
