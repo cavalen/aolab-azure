@@ -4,7 +4,7 @@
 
 **Requeriments**\
 To run this lab you will need:
-- A machine capable to run Ansible or Terraform and Internet access. (A docker container is provided if needed).
+- A machine capable to run Ansible or Terraform with Internet access. (A docker container is provided if needed).
 - Azure Account Information
   - [Subscription ID](https://portal.azure.com/?quickstart=true#blade/Microsoft_Azure_Billing/SubscriptionsBlade)
   - [Client ID (Application ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
