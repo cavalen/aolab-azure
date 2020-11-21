@@ -34,7 +34,6 @@ This is a Automation and Orchestration Lab, so you can deploy using Terraform or
 <details>
 <summary>Terraform Instructions :earth_americas:</summary>
 
-2a) Azure Credentials. 
 You need your [Subscription ID](https://portal.azure.com/?quickstart=true#blade/Microsoft_Azure_Billing/SubscriptionsBlade), [Client ID (Application ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade), [Secret (Client Secret)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) and [Tenant ID (Directory ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
 
 Inside the container: 
@@ -60,7 +59,8 @@ terraform init
 terraform plan
 teraform apply
 ```
-
+This can take some time (up to 15 min), if there are no errors wait until the process finish.
+<br />
 Terraform apply will output the Lab's information, like Mgmt IP & DNS, Public IPs, users, password, etc
 If you want to see this output, at any time run `terraform output`
 
@@ -69,34 +69,29 @@ If you want to see this output, at any time run `terraform output`
 <details>
 <summary>Ansible Instructions :a:</summary>
   
-2a) Azure Credentials. 
 You need your [Subscription ID](https://portal.azure.com/?quickstart=true#blade/Microsoft_Azure_Billing/SubscriptionsBlade), [Client ID (Application ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade), [Secret (Client Secret)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) and [Tenant ID (Directory ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
 
-Inside the container, edit the file `/home/ubuntu/.azure/credentials` and replace the values using your account info:
-```
-[default]
-subscription_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-client_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-secret=xxxxxxxxxxxxxxxxx
-tenant=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-```
-
-2b) Deploy Azure infrastructure:
-
-Go to your "home" directory and clone the Lab's repository
-Go to folder `deploy-lab` and run the `deploy.sh` script. 
-Enter your Prefix or Student ID, make sure to ***use lowercase letters only.***
+Inside the container:
+- Clone this repository
+- Edit `/home/ubuntu/.azure/credentials` and replace the values using your account info
+  - subscription_id
+  - client_id
+  - secret
+  - sp_tenant_id
+  - tenant
+- Move to the `deploy-lab` folder  
+- run `deploy.sh` script, it will ask for a Prefix (***use lowercase letters only, max 10 characters***)
 
 Instructions:
 ```
 cd
+nano /home/ubuntu/.azure/credentials
 git clone https://github.com/cavalen/aolab-azure
 cd /home/ubuntu/aolab-azure/deploy-lab
 ./deploy.sh
 ```
 This can take some time (up to 20 min), if there are no errors wait until the process finish.
 <br />
-
 Ansible will output the Lab's information, like Mgmg IP & DNS, Public IPs, users, password, etc
 If you want to see this output, check the `info.txt` file in the deploy-lab folder, or at any time run `ansible-playbook 05_get_information.yml`
 
