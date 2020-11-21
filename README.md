@@ -123,9 +123,8 @@ Ansible or Terraform will deploy the following resources in Azure:
   - Automation Toolchain installed (AS3, DO, TS)
 <br />
 
-
 ### Part 3:
-Import Lab's Postman Collection, Click here:\
+Import Lab's Postman Collection & Environment, Click here:\
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/caf3c5bdd97b03eafc17#?env%5BA%26O%20Latam%20-%20Azure%5D=W3sia2V5IjoiYmlnaXAxIiwidmFsdWUiOiJmNS1jYXJsb3N2LmVhc3R1cy5jbG91ZGFwcC5henVyZS5jb20iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImJpZ2lwX2FkbWluX3VzZXIiLCJ2YWx1ZSI6ImF6dXJldXNlciIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYmlnaXBfYWRtaW5fcGFzc3dvcmQiLCJ2YWx1ZSI6ImY1REVNT3M0dUxBVEFNIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJiaWdpcF9yb290X3Bhc3N3b3JkIiwidmFsdWUiOiJmNURFTU9zNHVMQVRBTSIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYmlnaXBfMV9hdXRoX3Rva2VuIiwidmFsdWUiOiJQU0RIUU9HVldEUVM1RjdLUEpXS1FOTFdNTyIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoibWdtdF9wb3J0IiwidmFsdWUiOiI0NDMiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImJpZ2lwX2Ruc19zZXJ2ZXJzIiwidmFsdWUiOiI0LjIuMi4yLDguOC44LjgiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImJpZ2lwX25ldF9pbnRlcm5hbCIsInZhbHVlIjoiMS4xLGZhbHNlLDEwIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJiaWdpcF9uZXRfaW50ZXJuYWxfaXBzIiwidmFsdWUiOiIxMC4xLjEwLjEwLzI0LDEwLjEuMTAuMTEvMjQsMTAuMS4xMC4xMy8yNCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYmlnaXBfbmV0X2RlZmF1bHRndyIsInZhbHVlIjoiMTAuMS4yMC4xIiwiZW5hYmxlZCI6dHJ1ZX1d) \
 [Postman Collection & Environment are available in this repository as well inside 'postman' folder] (https://github.com/cavalen/aolab-azure/postman/) 
 
