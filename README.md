@@ -61,7 +61,7 @@ terraform plan
 teraform apply
 ```
 
-Terraform apply will output the Lab's information, like Mgmg IP & DNS, Public IPs, etc
+Terraform apply will output the Lab's information, like Mgmt IP & DNS, Public IPs, users, password, etc
 If you want to see this output, at any time run `terraform output`
 
 </details>
@@ -97,7 +97,7 @@ cd /home/ubuntu/aolab-azure/deploy-lab
 This can take some time (up to 20 min), if there are no errors wait until the process finish.
 <br />
 
-Ansible will output the Lab's information, like Mgmg IP & DNS, Public IPs, etc
+Ansible will output the Lab's information, like Mgmg IP & DNS, Public IPs, users, password, etc
 If you want to see this output, check the `info.txt` file in the deploy-lab folder, or at any time run `ansible-playbook 05_get_information.yml`
 
 </details>
