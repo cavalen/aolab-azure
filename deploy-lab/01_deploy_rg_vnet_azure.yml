@@ -1,4 +1,4 @@
-# This file establishes the necessary resources on Azure to create a Demo Webserver using Ubuntu
+# Deploy a Resource Group, VNET, Subnets, NSG
 # Authentication from file $HOME/.azure/credentials
 
 - name: 01 - Create Resource Group and VNET
@@ -11,10 +11,10 @@
     - ./config.yml
 
   tasks:
-  
+
     - name: STARTING NOW ...
       debug: msg="Starting now @ {{ lookup('pipe', 'date "+%Y-%m-%d %H:%M:%S"') }}"
-      
+
     - name: Getting your Public IP Address
       local_action:
         module: uri
@@ -23,7 +23,7 @@
       register: local_ip
       failed_when: not local_ip.content | regex_search ('(\d+).(\d+).(\d+).(\d+)\n')
 
-    # Allow access from /24 instead of /32 host
+    # Allow access from /24 net or /32 host
     - name: Set Public Network Variable
       set_fact:
         #ALLOWED_SRC_ADDRESS: "{{ local_ip.content | ipsubnet (24,0) }}"
@@ -31,7 +31,7 @@
 
     - name: Your Public IP Net for allowed Inbound traffic
       debug: var=ALLOWED_SRC_ADDRESS
-      
+
     - name: Create Resource Group {{ RESOURCE_GROUP }}
       azure_rm_resourcegroup:
         name: "{{ RESOURCE_GROUP }}"
@@ -64,18 +64,10 @@
         address_prefix: "{{ INT_PREFIX }}"
         virtual_network: "{{ VNET1 }}"
 
-    - name: Create Storage Account sa{{ STUDENT_ID }}{{ date }}
-      azure_rm_storageaccount:
-        location: "{{ DEFAULT_LOCATION }}"
-        resource_group: "{{ RESOURCE_GROUP }}"
-        name: "sa{{ STUDENT_ID }}{{ date }}"
-        kind: StorageV2
-        account_type: Standard_LRS
-
-    - name: Create {{ NODE_NAME }}-{{ STUDENT_ID }}-sg0 Security Group
+    - name: Create vlab-{{ STUDENT_ID }}-sg0 Security Group
       azure_rm_securitygroup:
           resource_group: "{{ RESOURCE_GROUP }}"
-          name: "{{ NODE_NAME }}-{{ STUDENT_ID }}-sg0"
+          name: "vlab-{{ STUDENT_ID }}-sg0"
           purge_rules: no
           rules:
               - name: 'Allow_TCP_{{item}}'

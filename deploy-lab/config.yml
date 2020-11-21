@@ -9,9 +9,9 @@
 
 
 # Student_ID. Use lowercase and numbers only
-STUDENT_ID: student
+STUDENT_ID: cav
 
-RESOURCE_GROUP: "{{STUDENT_ID}}-vlab"
+RESOURCE_GROUP: "aolab-{{STUDENT_ID}}"
 
 #Some Locations: "Central US" "East US 2" "East US" "West US" "South Central US" "Brazil South"
 DEFAULT_LOCATION: "East US"
@@ -44,8 +44,9 @@ ADMINUSERNAME: azureuser
 ADMINPASSWORD: f5DEMOs4uLATAM
 
 # Network Security Group config, for BIG-IP and Server ... 
+# ALLOWED_PORTS: [80,443,8080-8085]
 ALLOWED_PORTS: [22,80,443,8080-8086,8443,3000]
 ALLOWED_SRC_ADDRESS: "0.0.0.0/0"
 
-# This lab uses a PAYG template for BIG-IP. No need for license
-# BIGIP_LICENSE: XXXXX-XXXXX-XXXXX-XXXXX-XXXXXXX
+# Used with the BYOL template
+BIGIP_LICENSE: XXXXX-XXXXX-XXXXX-XXXXX-XXXXXXX
