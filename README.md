@@ -32,7 +32,7 @@ You will be using user `ubuntu` for the rest of the lab.\
 ### Part 2: Infrasctructure deployment in Azure
 
 <details>
-<summary>Terraform Instructions</summary>
+<summary>Terraform Instructions :earth_americas:</summary>
 
 2a) Azure Credentials. 
 You need your [Subscription ID](https://portal.azure.com/?quickstart=true#blade/Microsoft_Azure_Billing/SubscriptionsBlade), [Client ID (Application ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade), [Secret (Client Secret)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) and [Tenant ID (Directory ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
@@ -62,9 +62,8 @@ teraform apply
 ```
 </details>
 
-<br />
 <details>
-<summary>Ansible Instructions</summary>
+<summary>Ansible Instructions :a:</summary>
   
 2a) Azure Credentials. 
 You need your [Subscription ID](https://portal.azure.com/?quickstart=true#blade/Microsoft_Azure_Billing/SubscriptionsBlade), [Client ID (Application ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade), [Secret (Client Secret)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) and [Tenant ID (Directory ID)](https://portal.azure.com/?quickstart=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
