@@ -29,6 +29,7 @@ docker run -it --name ubuntu-vlab cavalen/ubuntu-vlab
 ```
 
 ### Part 2: Infrasctructure deployment in Azure
+This is am Automation and ORchestration Lab, so you can deploy using Terraform or Ansible. Pick one.
 
 <details>
 <summary>Terraform Instructions :earth_americas:</summary>
