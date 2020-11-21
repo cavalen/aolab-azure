@@ -16,7 +16,7 @@ This lab contains 3 parts:
 2.  Lab/Infrasctructure deployment in Azure
 3.  A&O Lab (Provided PDF Guide) inside the `guide` folder of this Github repo
 
-Note: You can run this lab in your own machine without using the container image, just make sure Ansible and/or Terraform are installed 
+:pencil: **Note:** You can run this lab in your own machine without using the container image, just make sure Ansible and/or Terraform are installed 
 
 
 ### Part 1: Download Ubuntu Container with all the necessary tools
