@@ -21,13 +21,13 @@ Note: You can run this lab in your own machine without using the container image
 
 ### Part 1: Download Ubuntu Container with all the necessary tools
 You need a machine with Docker. You can get Docker for Windows/Mac at [this link](https://www.docker.com/products/docker-desktop)\
-Now, use the pre-configured Docker Container to deploy the infrastructure:\
+Now, use the pre-configured Docker Container to deploy the infrastructure:
 
 Open an interactive console to the container: 
 ```
 docker run -it --name ubuntu-vlab cavalen/ubuntu-vlab
 ```
-You will be using user `ubuntu` for the rest of the lab.\
+You will be using user `ubuntu` for the rest of the lab.
 
 ### Part 2: Infrasctructure deployment in Azure
 
