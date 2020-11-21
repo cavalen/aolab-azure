@@ -60,6 +60,10 @@ terraform init
 terraform plan
 teraform apply
 ```
+
+Terraform apply will output the Lab's information, like Mgmg IP & DNS, Public IPs, etc
+If you want to see this output, at any time run `terraform output`
+
 </details>
 
 <details>
@@ -93,6 +97,9 @@ cd /home/ubuntu/aolab-azure/deploy-lab
 This can take some time (up to 20 min), if there are no errors wait until the process finish.
 <br />
 
+Ansible will output the Lab's information, like Mgmg IP & DNS, Public IPs, etc
+If you want to see this output, check the `info.txt` file in the deploy-lab folder, or at any time run `ansible-playbook 05_get_information.yml`
+
 </details>
 
 If you have an Azure Account and get a 403 error like this:
@@ -106,27 +113,19 @@ You need to add a **Contributor Role** to your Registered Application in Azure. 
 **Deployment Description:**\
 Ansible or Terraform will deploy the following resources in Azure:
 - A Resource Group, a Security Group and a VNET (10.1.0.0/16) with 3 Subnets: Management (10.1.1.0/24), External (10.1.10.0/24) and Internal (10.1.20.0/24)
-
-**Playbook 02 - Ubuntu Docker Server**\
-The second playbook deploys an Ubuntu Server with Docker and the following services, used as Pool members: 
-- Port 8080 (Hackazon)
-- Port 8443 (Hackazon HTTPS)
-- Port 8081 (DVWA)
-- Port 8082 (OWASP bWAPP)
-- Port 8083 (OWASP Juice Shop)
-- Port 8084 (Hello World, simple HTTP page)
-- Port 8085 (NGINX default homepage)
-
-**Playbook 03 - BIG-IP**\
-The third playbook deploys a 2-NIC BIG-IP instance (PAYG) using a supported ARM template:\
-https://github.com/F5Networks/f5-azure-arm-templates/tree/master/supported/standalone/2nic/existing-stack/payg
-
-**Playbook 04 - Get Infrastructure Information**\
-The last playbook displays information relevant for the lab, and saves that information in a local file: **info.txt**
-- Lamp Server Public IP and DNS Record
-- BIG-IP Management URL
-- Virtual Servers Public IP and DNS Record
-
+- An Ubuntu Server with Docker and the following services (Pool members): 
+  - Port 8080 (Hackazon)  
+  - Port 8081 (DVWA)
+  - Port 8082 (Hello World, simple HTTP page)
+  - Port 8083 (OWASP Juice Shop)
+  - Port 8084 (OWASP bWAPP) 
+  - Port 8085 (NGINX default homepage)
+  - Port 8443 (Hackazon HTTPS)
+- A 2-NIC BIG-IP instance with:
+  - Management Interface (10.1.1.245)
+  - External Interface (10.1.10.245) 
+  - Self-IP (10.1.1.246)
+  - Automation Toolchain installed (AS3, DO, TS)
 <br />
 
 
