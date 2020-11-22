@@ -90,7 +90,7 @@ cd
 nano /home/ubuntu/.azure/credentials
 git clone https://github.com/cavalen/aolab-azure
 cd /home/ubuntu/aolab-azure/deploy-lab
-./deploy.sh
+sh deploy.sh
 ```
 This can take some time (up to 20 min). 
 <br />
