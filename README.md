@@ -25,7 +25,7 @@ Now, use the pre-configured Docker Container to deploy the infrastructure:
 
 Open an interactive console to the container: 
 ```
-docker run -it --name ubuntu-vlab cavalen/ubuntu-vlab
+docker run -it --name vlab cavalen/ubuntu-vlab
 ```
 
 ### Part 2: Infrasctructure deployment in Azure
