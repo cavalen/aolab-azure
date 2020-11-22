@@ -23,6 +23,8 @@ else
 fi
 echo ""
 echo "Desplegando .... "
-echo ""
+echo "$(date)"
 echo ""
 ansible-playbook 01_deploy_rg_vnet_azure.yml && ansible-playbook 02_deploy_ubuntu_docker_azure.yml && ansible-playbook 03_deploy_bigip_2nic_azure.yml && ansible-playbook 04_install_as3_ts_do.yml && ansible-playbook 05_get_information.yml
+echo "Finalizado .... "
+echo "$(date)"
