@@ -59,7 +59,7 @@ terraform init
 terraform plan
 teraform apply
 ```
-This can take some time (up to 15 min), if there are no errors wait until the process finish.
+This can take some time (up to 15 min).
 <br />
 
 ### Output:
@@ -92,7 +92,7 @@ git clone https://github.com/cavalen/aolab-azure
 cd /home/ubuntu/aolab-azure/deploy-lab
 ./deploy.sh
 ```
-This can take some time (up to 20 min), if there are no errors wait until the process finish.
+This can take some time (up to 20 min). 
 <br />
 
 ### Output:
