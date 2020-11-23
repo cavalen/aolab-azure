@@ -1,7 +1,4 @@
 # Deploy a 2-NIC BIG-IP VE using image
-# imageName => Good200Mbps / Best200Mbps / AdvancedWaf200Mbps 
-# if imageName is AdvancedWaf ==> bigIpModules = "ltm:none,asm:nominal,fps:nominal"
-
 
 - name: 03 - Deploy BIG-IP 2-NIC on Azure (Management & External)
   hosts: localhost
@@ -36,6 +33,7 @@
         #ALLOWED_SRC_ADDRESS: "{{ local_ip.content | ipsubnet (24,0) }}"
         ALLOWED_SRC_ADDRESS: "{{ local_ip.content | ipaddr ('host') }}"
 
+    # BIG-IP NSG, External
     - name: BIG-IP Network Security Group External {{ BIGIP_NAME }}-{{ STUDENT_ID }}-ext-nsg
       azure_rm_securitygroup:
         resource_group: "{{ RESOURCE_GROUP }}"
@@ -52,6 +50,7 @@
       loop_control:
         index_var: my_idx
 
+    # BIG-IP NSG, Mgmt
     - name: BIG-IP Network Security Group Mgmt {{ BIGIP_NAME }}-{{ STUDENT_ID }}-mgmt-nsg
       azure_rm_securitygroup:
         resource_group: "{{ RESOURCE_GROUP }}"
@@ -62,18 +61,18 @@
               source_address_prefix: "{{ ALLOWED_SRC_ADDRESS }}"
               destination_port_range: "443"
               access: Allow
-              priority: "101"
+              priority: "110"
               direction: Inbound
             - name: 'Allow_TCP_22'
               protocol: Tcp
               source_address_prefix: "{{ ALLOWED_SRC_ADDRESS }}"
               destination_port_range: "22"
               access: Allow
-              priority: "101"
+              priority: "120"
               direction: Inbound
 
-    # BIG-IP -> Mgmt NIC y Public IP
-    - name: BIG-IP Mgmt NIC {{ BIGIP_NAME }}-{{ STUDENT_ID }}-mgmt-nic with Security Group vlab-{{ STUDENT_ID }}-sg0
+    # Mgmt NIC + Public IP
+    - name: BIG-IP Mgmt NIC {{ BIGIP_NAME }}-{{ STUDENT_ID }}-mgmt-nic with Security Group "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-mgmt-nsg"
       azure_rm_networkinterface:
         location: "{{ DEFAULT_LOCATION }}"
         resource_group: "{{ RESOURCE_GROUP }}"
@@ -82,37 +81,55 @@
         virtual_network: "{{ VNET1 }}"
         subnet: "{{ SUBNET_MGMT }}"
         ip_configurations:
-          - name: "ipconfigmgmt"
+          - name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-ipconfig1"
+            primary: "yes"
             private_ip_allocation_method: Static
             private_ip_address: "{{ BIGIP_ADDRESS_MGMT }}"
             public_ip_address_name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-mgmt-pip"
 
-    # BIG-IP -> External NIC (Self IP + VIP) y Public IPs
-    - name: BIG-IP External NIC {{ BIGIP_NAME }}-{{ STUDENT_ID }}-exit with Security Group vlab-{{ STUDENT_ID }}-sg0
+    # Mgmt Public IP DNS
+    - name: BIG-IP Mgmt DNS Name - {{ BIGIP_NAME }}-{{ STUDENT_ID }}
+      azure_rm_publicipaddress:
+        resource_group: "{{ RESOURCE_GROUP }}"
+        name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-mgmt-pip"
+        domain_name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}"
+
+    # External NIC (Self IP + VIP) + Public IPs
+    - name: BIG-IP External NIC {{ BIGIP_NAME }}-{{ STUDENT_ID }}-exit with Security Group "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-ext-nsg"
       azure_rm_networkinterface:
         location: "{{ DEFAULT_LOCATION }}"
         resource_group: "{{ RESOURCE_GROUP }}"
         security_group: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-ext-nsg"
         name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-ext"
+        enable_accelerated_networking: "yes"
         virtual_network: "{{ VNET1 }}"
         subnet: "{{ SUBNET_EXT }}"
         ip_configurations:
-          - name: "ipconfigext1"
+          - name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-self-ipconfig"
             primary: "yes"
             private_ip_allocation_method: Static
             private_ip_address: "{{ BIGIP_ADDRESS_EXT }}"
-            public_ip_address_name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-self-ipconfig"
-          - name: "ipconfigext2"
+            public_ip_address_name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-self-pip0"
+          - name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-ext-ipconfig0"
+            primary: "no"
             private_ip_allocation_method: Static
             private_ip_address: "{{ BIGIP_ADDRESS_VIP }}"
-            public_ip_address_name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-ext-ipconfig0"
+            public_ip_address_name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-ext-pip0"
 
+    # VIP Public IP DNS
+    - name: BIG-IP VIP DNS Name - {{ BIGIP_NAME }}-{{ STUDENT_ID }}-vip
+      azure_rm_publicipaddress:
+        resource_group: "{{ RESOURCE_GROUP }}"
+        name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-ext-pip0"
+        domain_name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}-vip"
+
+    # Create BIG-IP VM
     - name: Create {{ BIGIP_NAME }}-{{ STUDENT_ID }} Virtual Machine
       azure_rm_virtualmachine:
         location: "{{ DEFAULT_LOCATION }}"
         resource_group: "{{ RESOURCE_GROUP }}"
         name: "{{ BIGIP_NAME }}-{{ STUDENT_ID }}"
-        vm_size: Standard_DS2_v2
+        vm_size: Standard_DS3_v2
         managed_disk_type: Premium_LRS
         admin_username: "{{ ADMINUSERNAME }}"
         admin_password: "{{ ADMINPASSWORD }}"
