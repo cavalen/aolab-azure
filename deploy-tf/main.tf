@@ -38,7 +38,7 @@ data "http" "myip" {
 
 # Create a Resource Group if it doesn't exist
 resource "azurerm_resource_group" "tfresourcegroup" {
-  name     = "aolab-${var.prefix}"
+  name     = "aolab-${var.prefix}-tf"
   location = var.location
 }
 
