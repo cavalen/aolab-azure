@@ -81,7 +81,7 @@ Inside the container:
   - secret
   - sp_tenant_id
   - tenant
-- Move to the `deploy-lab` folder  
+- Move to the `deploy-ans` folder  
 - run `deploy.sh` script, it will ask for a Prefix (***use lowercase letters only, max 10 characters***)
 
 Instructions:
@@ -89,7 +89,7 @@ Instructions:
 cd
 nano /home/ubuntu/.azure/credentials
 git clone https://github.com/cavalen/aolab-azure
-cd /home/ubuntu/aolab-azure/deploy-lab
+cd /home/ubuntu/aolab-azure/deploy-ans
 sh deploy.sh
 ```
 This can take some time (up to 20 min). 
@@ -97,7 +97,7 @@ This can take some time (up to 20 min).
 
 ### Output:
 Ansible will output the Lab's information, like Mgmg IP & DNS, Public IPs, users, password, etc.
-If you want to see this output, check the `info.txt` file in the deploy-lab folder, or at any time run `ansible-playbook 05_get_information.yml`
+If you want to see this output, check the `info.txt` file in the deploy-ans folder, or at any time run `ansible-playbook 05_get_information.yml`
 
 </details>
 
@@ -149,7 +149,7 @@ If using Terraform , go to `/home/ubuntu/aolab-azure/deploy-tf` and run:
 terraform destroy
 ``` 
 
-If using Ansible, go to `/home/ubuntu/aolab-azure/deploy-lab` and run:
+If using Ansible, go to `/home/ubuntu/aolab-azure/deploy-ans` and run:
 ```
 ansible_playbook 99_delete_lab_azure.yml
 ```
