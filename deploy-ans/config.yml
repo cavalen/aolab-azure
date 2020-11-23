@@ -1,0 +1,53 @@
+#
+# To authenticate with Azure, create/edit the file $HOME/.azure/credentials using the following syntax:
+#
+# [default]
+# subscription_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+# client_id=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+# secret=xxxxxxxxxxxxxxxxx
+# tenant=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+
+# Student_ID. Use lowercase and numbers only
+STUDENT_ID: test
+
+RESOURCE_GROUP: "aolab-{{STUDENT_ID}}"
+
+#Some Locations: "Central US" "East US 2" "East US" "West US" "South Central US" "Brazil South"
+DEFAULT_LOCATION: "East US"
+
+VNET1: lab-vnet-{{STUDENT_ID}}
+
+SUBNET_MGMT: sub-mgmt-{{STUDENT_ID}}
+SUBNET_EXT: sub-ext-{{STUDENT_ID}}
+SUBNET_INT: sub-int-{{STUDENT_ID}}
+
+# VNET and SUBNET prefixes.
+VNET_CIDR: "10.1.0.0/16"
+MGMT_PREFIX: "10.1.1.0/24"
+EXT_PREFIX: "10.1.10.0/24"
+INT_PREFIX: "10.1.20.0/24"
+
+# BIG-IP management and Self-IP addresses
+BIGIP_ADDRESS_MGMT: 10.1.1.245
+BIGIP_ADDRESS_EXT: 10.1.10.245
+BIGIP_ADDRESS_VIP: 10.1.10.246
+BIGIP_ADDRESS_INT: 10.1.20.245
+
+# Lamp server configuration
+NODE_ADDRESS: 10.1.10.80
+NODE_NAME: lampserver
+NODE_USER: azureuser
+NODE_PASSWORD: f5DEMOs4uLATAM
+
+BIGIP_NAME: bigiplab
+ADMINUSERNAME: azureuser
+ADMINPASSWORD: f5DEMOs4uLATAM
+
+# Network Security Group config, for BIG-IP and Server ... 
+# ALLOWED_PORTS: [80,443,8080-8085]
+ALLOWED_PORTS: [22,80,443,8080-8086,8443,3000]
+ALLOWED_SRC_ADDRESS: "0.0.0.0/0"
+
+# Used with the BYOL template
+BIGIP_LICENSE: XXXXX-XXXXX-XXXXX-XXXXX-XXXXXXX
