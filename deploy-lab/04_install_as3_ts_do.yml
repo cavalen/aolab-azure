@@ -1,6 +1,6 @@
 # Update/Install AS3, TS & DO RPMs
 # Need "rpm" package installed 
-# Works in ubuntu 18 linux ("grep" parameters might be different in other releases)
+# Works only in Ubuntu 18 linux, not in Mac ("grep" parameters might be different in other releases)
 
 - name: 04 Install AS3, TS & DO RPMs
   hosts: localhost
