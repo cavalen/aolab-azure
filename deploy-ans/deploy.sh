@@ -11,14 +11,14 @@ prefix=$(echo "$prefix" | tr -dc '[:alpha:]' | tr '[:upper:]' '[:lower:]' | head
 
 if [ -z "$prefix" ] || [ ${#prefix} -lt 2 ]
 then
-   echo "Usando Prefix por defecto -student-"
-   prefix="student"
-   sed -i 's/.*STUDENT_ID:.*/STUDENT_ID: student/' config.yml
-   echo ""
+  echo "Usando Prefix por defecto -student-"
+  prefix="student"
+  sed -i 's/.*STUDENT_ID:.*/STUDENT_ID: student/' config.yml
+  echo ""
 else
-   echo "Usando Prefix $prefix"
-   sed -i 's/.*STUDENT_ID:.*/STUDENT_ID: '$prefix'/' config.yml
-   echo ""
+  echo "Usando Prefix $prefix"
+  sed -i 's/.*STUDENT_ID:.*/STUDENT_ID: '$prefix'/' config.yml
+  echo ""
 fi
 echo ""
 echo "Desplegando .... "
