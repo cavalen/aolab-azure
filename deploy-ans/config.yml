@@ -9,7 +9,7 @@
 
 
 # Student_ID. Use lowercase and numbers only
-STUDENT_ID: prueba
+STUDENT_ID: pruebauno
 
 RESOURCE_GROUP: "aolab-{{STUDENT_ID}}"
 
