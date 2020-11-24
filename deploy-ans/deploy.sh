@@ -17,7 +17,6 @@ then
    echo ""
 else
    echo "Usando Prefix $prefix"
-   #sed -i 's/STUDENT_ID: cav/STUDENT_ID: '$prefix'/g' config.yml
    sed -i 's/.*STUDENT_ID:.*/STUDENT_ID: '$prefix'/' config.yml
    echo ""
 fi
@@ -25,6 +24,6 @@ echo ""
 echo "Desplegando .... "
 echo "$(date)"
 echo ""
-ansible-playbook 01_deploy_rg_vnet_azure.yml && ansible-playbook 02_deploy_ubuntu_docker_azure.yml && ansible-playbook 03_deploy_bigip_2nic_azure.yml && ansible-playbook 04_install_atc.yml && ansible-playbook 05_get_information.yml
+ansible-playbook 01_deploy_rg_vnet_azure.yml && ansible-playbook 02_deploy_ubuntu_docker_azure.yml && ansible-playbook 03_deploy_bigip_2nic_noarm_azure.yml && ansible-playbook 04_install_atc.yml && ansible-playbook 05_get_information.yml
 echo "Finalizado .... "
 echo "$(date)"
