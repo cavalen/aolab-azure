@@ -9,7 +9,7 @@ resource "azurerm_public_ip" "vm01mgmtpip" {
   sku                 = "Standard"
   resource_group_name = azurerm_resource_group.tfresourcegroup.name
   allocation_method   = "Static"
-  domain_name_label   = "f5-${var.prefix}"
+  domain_name_label   = "bigip-${var.prefix}"
 
   tags = {
     Name        = "${var.environment}-vm01-mgmt-public-ip"
@@ -174,6 +174,8 @@ resource "azurerm_linux_virtual_machine" "f5vm01" {
   disable_password_authentication = false
   computer_name                   = "${var.prefix}vm01"
   #custom_data                     = base64encode(data.template_file.vm_onboard.rendered)
+  #custom_data                     = filebase64("${path.module}/files/install-runtime-init.sh")
+  #custom_data                     = filebase64("../files/install-runtime-init.sh")
 
   os_disk {
     name                 = "big-ip-${var.prefix}-vm01-osdisk"
