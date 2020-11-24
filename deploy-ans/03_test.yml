@@ -139,7 +139,7 @@
           publisher: f5-networks
           offer: f5-big-ip-best
           sku: f5-bigip-virtual-edition-25m-best-hourly
-          version: latest
+          version: 15.1.004000
         plan:
           name: f5-bigip-virtual-edition-25m-best-hourly
           product: f5-big-ip-best
