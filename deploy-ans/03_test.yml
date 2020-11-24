@@ -161,7 +161,7 @@
         publisher: Microsoft.Azure.Extensions
         virtual_machine_extension_type: CustomScript
         type_handler_version: "2.0"                
-        settings: '{"fileUris": ["https://raw.githubusercontent.com/cavalen/aolab-azure/master/files/install-runtime-init.sh"], "commandToExecute": "sh install-runtime-init.sh 2>&1 "}'
+        settings: '{"fileUris": ["https://raw.githubusercontent.com/cavalen/aolab-azure/master/files/install-runtime-init.sh"], "commandToExecute": "nohup sh install-runtime-init.sh </dev/null >/dev/null 2>&1 & "}'
 
 #    ### Changing some BIG-IP settings ###
 #    - name: Getting BIG-IP Mgmt Info
