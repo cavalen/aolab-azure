@@ -7,9 +7,8 @@
 # secret=xxxxxxxxxxxxxxxxx
 # tenant=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
-
 # Student_ID. Use lowercase and numbers only
-STUDENT_ID: student
+STUDENT_ID: testcv
 
 RESOURCE_GROUP: "aolab-{{STUDENT_ID}}"
 
@@ -36,7 +35,7 @@ BIGIP_ADDRESS_INT: 10.1.20.245
 
 # Lamp server configuration
 NODE_ADDRESS: 10.1.10.80
-NODE_NAME: lampserver
+NODE_NAME: webserver
 NODE_USER: azureuser
 NODE_PASSWORD: f5DEMOs4uLATAM
 
@@ -44,9 +43,9 @@ BIGIP_NAME: bigiplab
 ADMINUSERNAME: azureuser
 ADMINPASSWORD: f5DEMOs4uLATAM
 
-# Network Security Group config, for BIG-IP and Server ... 
+# Network Security Group config, for BIG-IP and Server ...
 # ALLOWED_PORTS: [80,443,8080-8085]
-ALLOWED_PORTS: [22,80,443,8080-8086,8443,3000]
+ALLOWED_PORTS: [22, 80, 443, 8080-8086, 8443, 3000]
 ALLOWED_SRC_ADDRESS: "0.0.0.0/0"
 
 # Used with the BYOL template
