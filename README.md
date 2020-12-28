@@ -1,6 +1,6 @@
 # aolab-azure
 
-## F5 Automation & Orchestration Lab in Azure
+## F5 Automation & Orchestration Lab in Azure.
 
 **Requeriments**\
 To run this lab you will need:
