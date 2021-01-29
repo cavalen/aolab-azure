@@ -8,9 +8,9 @@
 # tenant=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 # Student_ID. Use lowercase and numbers only
-STUDENT_ID: testcv
+STUDENT_ID: cav
 
-RESOURCE_GROUP: "aolab-{{STUDENT_ID}}"
+RESOURCE_GROUP: "bigiqtest-{{STUDENT_ID}}"
 
 #Some Locations: "Central US" "East US 2" "East US" "West US" "South Central US" "Brazil South"
 DEFAULT_LOCATION: "East US"

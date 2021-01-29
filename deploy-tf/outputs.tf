@@ -21,3 +21,4 @@ output "BIG-IP_Private_VIP" { value = azurerm_network_interface.vm01-ext-nic.pri
 
 output "Server_IP" { value = azurerm_public_ip.serverpublicip.ip_address }
 output "Your_Public_IP" { value = "${chomp(data.http.myip.body)}/32" }
+output "PLEASE_RUN_TO_UPDATE_SERVER_IP_PUBLIC_ADDRESS" {value = "terraform refresh"}
